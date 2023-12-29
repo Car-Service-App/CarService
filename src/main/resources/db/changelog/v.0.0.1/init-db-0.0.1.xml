@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet author="ZmaevDA" id="1698581124717-1">
+        <createTable tableName="manufacturer">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="manufacturer_pkey"/>
+            </column>
+            <column name="brand_name" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="country" type="VARCHAR(255)">
+                <constraints nullable="true" unique="false"/>
+            </column>
+            <column name="production" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-2">
+        <createTable tableName="car_model">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="car_model_pkey"/>
+            </column>
+            <column name="manufacturer_id" type="BIGINT"/>
+            <column name="model_name" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-3">
+        <createTable tableName="transmission_type">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" foreignKeyName="transmission_pkey"/>
+            </column>
+            <column name="transmission_name" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-4">
+        <createTable tableName="engine_type">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="engine_pkey"/>
+            </column>
+            <column name="engine_name" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="engine_capacity" type="VARCHAR(255)">
+                <constraints unique="false" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-5">
+        <createTable tableName="car">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="car_pkey"/>
+            </column>
+            <column name="car_model_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="transmission_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="engine_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="car_type" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="release_year" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="car_image" type="BLOB">
+                <constraints unique="false" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-6">
+        <addForeignKeyConstraint baseColumnNames="manufacturer_id" baseTableName="car_model"
+                                 constraintName="fk3046kvjyysq288vy3lsbtc9nw" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="manufacturer" validate="true"/>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-7">
+        <addForeignKeyConstraint baseColumnNames="car_model_id" baseTableName="car"
+                                 constraintName="fk9dm854t3ybtcsv86ro5lrin21" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="car_model" validate="true"/>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-8">
+        <addForeignKeyConstraint baseColumnNames="transmission_id" baseTableName="car"
+                                 constraintName="fk9dm134t3ybtcsv86ro5lrinfa" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="transmission_type" validate="true"/>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-9">
+        <addForeignKeyConstraint baseColumnNames="engine_id" baseTableName="car"
+                                 constraintName="tg9dm134t3ybtjbn86ro5lrin12" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="engine_type" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
