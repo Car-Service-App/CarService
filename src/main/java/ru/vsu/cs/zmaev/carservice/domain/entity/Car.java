@@ -22,9 +22,8 @@ public class Car {
     @Column(name = "release_year")
     private Instant releaseYear;
 
-    @Lob
-    @Column(name = "car_image")
-    private byte[] carImage;
+    @Column(name = "car_image_link")
+    private String carImageLink;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "car_model_id", referencedColumnName = "id")
