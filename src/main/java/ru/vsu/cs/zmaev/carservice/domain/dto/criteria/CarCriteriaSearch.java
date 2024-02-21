@@ -3,8 +3,6 @@ package ru.vsu.cs.zmaev.carservice.domain.dto.criteria;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
-import java.time.Instant;
-
 @Data
 @Schema(description = "Описание класса CarCriteriaSearch")
 public class CarCriteriaSearch {
@@ -12,7 +10,7 @@ public class CarCriteriaSearch {
     @Schema(description = "Тип автомобиля", example = "CABRIOLET")
     private final String carType;
     @Schema(description = "Год выпуска автомобиля")
-    private final Instant releaseYear;
+    private final Integer releaseYear;
     @Schema(description = "Название производителя автомобиля", example = "Honda")
     private final String brandName;
     @Schema(description = "Название модели автомобиля", example = "Civic")

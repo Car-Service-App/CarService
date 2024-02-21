@@ -20,6 +20,6 @@ public class Engine {
     @Column(name = "engine_capacity")
     private String capacity;
 
-    @OneToMany(mappedBy = "engine")
+    @ManyToMany(mappedBy = "engines")
     private List<Car> cars;
 }

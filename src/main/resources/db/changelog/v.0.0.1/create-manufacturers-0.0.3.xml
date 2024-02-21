@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet author="ZmaevDA" id="4137231121856-1">
+        <insert tableName="manufacturer">
+            <column name="id" value="1"/>
+            <column name="brand_name" value="ACURA"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/acura.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="2"/>
+            <column name="brand_name" value="AUDI"/>
+            <column name="country" value="GERMANY"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/audi.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="3"/>
+            <column name="brand_name" value="BMW"/>
+            <column name="country" value="GERMANY"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/bmw.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="4"/>
+            <column name="brand_name" value="CADILLAC"/>
+            <column name="country" value="USA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/cadillac.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="5"/>
+            <column name="brand_name" value="CHEVROLET"/>
+            <column name="country" value="USA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/chevrolet.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="6"/>
+            <column name="brand_name" value="CHRYSLER"/>
+            <column name="country" value="USA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/chrysler.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="7"/>
+            <column name="brand_name" value=" CITROEN"/>
+            <column name="country" value="FRANCE"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/citroen.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="8"/>
+            <column name="brand_name" value="DAEWOO"/>
+            <column name="country" value="KOREA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/daewoo.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="9"/>
+            <column name="brand_name" value="DATSUN"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/datsun.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="10"/>
+            <column name="brand_name" value="FIAT"/>
+            <column name="country" value="ITALY"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/fiat.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="11"/>
+            <column name="brand_name" value="FORD"/>
+            <column name="country" value="USA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/ford.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="12"/>
+            <column name="brand_name" value="GEELY"/>
+            <column name="country" value="CHINA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/geely.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="13"/>
+            <column name="brand_name" value="HONDA"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/honda.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="14"/>
+            <column name="brand_name" value="HUMMER"/>
+            <column name="country" value="USA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/hummer.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="15"/>
+            <column name="brand_name" value="HYUNDAI"/>
+            <column name="country" value="KOREA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/hyundai.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="16"/>
+            <column name="brand_name" value="INFINITY"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/infinity.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="17"/>
+            <column name="brand_name" value="JAGUAR"/>
+            <column name="country" value="UK"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/jaguar.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="18"/>
+            <column name="brand_name" value="JEEP"/>
+            <column name="country" value="USA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/jeep.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="19"/>
+            <column name="brand_name" value="KIA"/>
+            <column name="country" value="KOREA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/kia.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="20"/>
+            <column name="brand_name" value="LAND_ROVER"/>
+            <column name="country" value="UK"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/land_rover.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="21"/>
+            <column name="brand_name" value="LEXUS"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/lexus.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="22"/>
+            <column name="brand_name" value="LIFAN"/>
+            <column name="country" value="CHINA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/lifan.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="23"/>
+            <column name="brand_name" value="MAZDA"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/mazda.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="24"/>
+            <column name="brand_name" value="MERCEDES"/>
+            <column name="country" value="GERMANY"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/mercedes.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="25"/>
+            <column name="brand_name" value="MITSUBISHI"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/mitsubishi.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="26"/>
+            <column name="brand_name" value="NISSAN"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/nissan.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="27"/>
+            <column name="brand_name" value="OPEL"/>
+            <column name="country" value="FRANCE"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/opel.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="28"/>
+            <column name="brand_name" value="PEUGEOT"/>
+            <column name="country" value="FRANCE"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/peugeot.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="29"/>
+            <column name="brand_name" value="PONTIAC"/>
+            <column name="country" value="USA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/pontiac.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="30"/>
+            <column name="brand_name" value="PORSCHE"/>
+            <column name="country" value="GERMANY"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/porsche.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="31"/>
+            <column name="brand_name" value="RENAULT"/>
+            <column name="country" value="FRANCE"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/renault.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="32"/>
+            <column name="brand_name" value="SKODA"/>
+            <column name="country" value="CZECH"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/skoda.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="33"/>
+            <column name="brand_name" value="SSANGYONG"/>
+            <column name="country" value="CHINA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/ssangyong.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="34"/>
+            <column name="brand_name" value="SUBARU"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/subaru.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="35"/>
+            <column name="brand_name" value="SUZUKI"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/suzuki.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="36"/>
+            <column name="brand_name" value="TOYOTA"/>
+            <column name="country" value="JAPAN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/toyota.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="37"/>
+            <column name="brand_name" value="VOLKSWAGEN"/>
+            <column name="country" value="GERMANY"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/volkswagen.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="38"/>
+            <column name="brand_name" value="VOLVO"/>
+            <column name="country" value="SWEDEN"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/volvo.png"/>
+        </insert>
+        <insert tableName="manufacturer">
+            <column name="id" value="39"/>
+            <column name="brand_name" value="LADA"/>
+            <column name="country" value="RUSSIA"/>
+            <column name="production" value="ALL"/>
+            <column name="logo_link" value="/logo/lada.png"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

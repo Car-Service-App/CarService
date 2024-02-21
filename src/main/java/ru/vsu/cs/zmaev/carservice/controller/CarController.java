@@ -15,7 +15,7 @@ import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarResponseDto;
 import ru.vsu.cs.zmaev.carservice.service.CarService;
 
-import java.time.Instant;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/cars")
@@ -29,7 +29,7 @@ public class CarController implements CarApi {
             @RequestParam(defaultValue = "0") @Min(value = 0) Integer pagePosition,
             @RequestParam(defaultValue = "10") @Min(value = 1) Integer pageSize,
             @RequestParam(required = false) String carType,
-            @RequestParam(required = false) Instant releaseYear,
+            @RequestParam(required = false) Integer releaseYear,
             @RequestParam(required = false) String brandName,
             @RequestParam(required = false) String carModelName,
             @RequestParam(required = false) Long engineId,
@@ -62,6 +62,11 @@ public class CarController implements CarApi {
     @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<CarResponseDto> findOneById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(carService.findOneById(id));
+    }
+
+    @GetMapping(value = "/model/{modelId}", produces = "application/json")
+    public ResponseEntity<List<CarResponseDto>> findCarByModelId(@PathVariable Long modelId) {
+        return ResponseEntity.status(HttpStatus.OK).body(carService.findCarsByModelId(modelId));
     }
 
     @PostMapping(produces = "application/json")

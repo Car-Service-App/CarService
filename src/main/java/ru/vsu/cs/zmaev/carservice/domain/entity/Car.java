@@ -5,6 +5,7 @@ import lombok.Data;
 import ru.vsu.cs.zmaev.carservice.domain.enums.CarType;
 
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @Entity
@@ -20,20 +21,28 @@ public class Car {
     private CarType carType;
 
     @Column(name = "release_year")
-    private Instant releaseYear;
+    private Integer releaseYear;
 
     @Column(name = "car_image_link")
     private String carImageLink;
+
+    @Column(name = "car_generation")
+    private Integer generation;
+
+    @Column(name = "is_restyling")
+    private Boolean isRestyling;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "car_model_id", referencedColumnName = "id")
     private CarModel carModel;
 
     @ManyToOne
-    @JoinColumn(name = "engine_id", referencedColumnName = "id")
-    private Engine engine;
-
-    @ManyToOne
     @JoinColumn(name = "transmission_id", referencedColumnName = "id")
     private Transmission transmission;
+
+    @ManyToMany
+    @JoinTable(name = "CarEngine",
+            joinColumns = @JoinColumn(name = "car_id"),
+            inverseJoinColumns = @JoinColumn(name = "engine_id"))
+    private List<Engine> engines;
 }
