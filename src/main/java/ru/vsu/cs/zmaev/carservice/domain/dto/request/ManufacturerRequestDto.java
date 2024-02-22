@@ -13,4 +13,6 @@ public class ManufacturerRequestDto {
     private final String country;
     @Schema(description = "Тип производимой продукции", example = "ALL", enumAsRef = true)
     private final ProductionType productionType;
+    @Schema(description = "Ссылка на изображение")
+    private final String logoLink;
 }
