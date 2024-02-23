@@ -1,0 +1,2055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet author="ZmaevDA" id="5137231121812-1">
+        <comment>ACURA</comment>
+        <insert tableName="car_model">
+            <column name="id" value="1"/>
+            <column name="manufacturer_id" value="1"/>
+            <column name="model_name" value="MDX"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="2"/>
+            <column name="manufacturer_id" value="1"/>
+            <column name="model_name" value="RDX"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="3"/>
+            <column name="manufacturer_id" value="1"/>
+            <column name="model_name" value="ZDX"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241121812-2">
+        <comment>AUDI</comment>
+        <insert tableName="car_model">
+            <column name="id" value="4"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="A1"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="5"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="A2"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="6"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="A3"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="7"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="A4"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="8"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="A5"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="9"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="A6"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="10"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="A7"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="11"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="A8"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="12"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="Q3"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="13"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="Q5"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="14"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="Q7"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="15"/>
+            <column name="manufacturer_id" value="2"/>
+            <column name="model_name" value="TT"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241121812-3">
+        <comment>BMW</comment>
+        <insert tableName="car_model">
+            <column name="id" value="16"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="1"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="17"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="2"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="18"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="3"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="19"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="4"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="20"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="5"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="21"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="6"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="22"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="7"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="23"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="X3"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="24"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="X4"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="25"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="X5"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="26"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="X6"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="27"/>
+            <column name="manufacturer_id" value="3"/>
+            <column name="model_name" value="Z4"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="5137231121812-4">
+        <comment>CADILLAC</comment>
+        <insert tableName="car_model">
+            <column name="id" value="28"/>
+            <column name="manufacturer_id" value="4"/>
+            <column name="model_name" value="ATS"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="29"/>
+            <column name="manufacturer_id" value="4"/>
+            <column name="model_name" value="BLS"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="30"/>
+            <column name="manufacturer_id" value="4"/>
+            <column name="model_name" value="CTS"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="31"/>
+            <column name="manufacturer_id" value="4"/>
+            <column name="model_name" value="Escalade"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="32"/>
+            <column name="manufacturer_id" value="4"/>
+            <column name="model_name" value="Escalade"/>
+        </insert>
+        <insert tableName="car_model">
+            <column name="id" value="33"/>
+            <column name="manufacturer_id" value="4"/>
+            <column name="model_name" value="SRX"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="34-49">
+        <comment>CHEVROLET</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="34"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Aveo"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="35"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Camaro"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="36"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Coptiva"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="37"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Cobalt"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="38"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Cruze"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="39"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Epica"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="40"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Evanda"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="41"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Lacetti"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="42"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Lanos"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="43"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Malibu"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="44"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Orlando"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="45"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Rezzo"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="46"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Spark"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="47"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Tahoe"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="48"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Traiblazer"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="49"/>
+            <column name="manufacturer_id" value="5"/>
+            <column name="model_name" value="Viva"/>
+
+        </insert>
+
+    </changeSet>
+
+    <changeSet author="ZmaevDA" id="50-52">
+        <comment>CHRYSLER</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="50"/>
+            <column name="manufacturer_id" value="6"/>
+            <column name="model_name" value="PT Cruiser"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="51"/>
+            <column name="manufacturer_id" value="6"/>
+            <column name="model_name" value="Sebring"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="52"/>
+            <column name="manufacturer_id" value="6"/>
+            <column name="model_name" value="Voyager"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="53-64">
+        <comment>CITROEN</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="53"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="C1"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="54"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="C2"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="55"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="C3"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="56"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="C4"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="57"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="C5"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="58"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="C6"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="59"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="C8"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="60"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="DS3"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="61"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="DC4"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="62"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="DC5"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="63"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="C-Croser"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="64"/>
+            <column name="manufacturer_id" value="7"/>
+            <column name="model_name" value="Xsara Picasso"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="65-71">
+        <comment>DAEWOO</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="65"/>
+            <column name="manufacturer_id" value="8"/>
+            <column name="model_name" value="Espero"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="66"/>
+            <column name="manufacturer_id" value="8"/>
+            <column name="model_name" value="Gentra"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="67"/>
+            <column name="manufacturer_id" value="8"/>
+            <column name="model_name" value="Lanos"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="68"/>
+            <column name="manufacturer_id" value="8"/>
+            <column name="model_name" value="Leganza"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="69"/>
+            <column name="manufacturer_id" value="8"/>
+            <column name="model_name" value="Matiz"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="70"/>
+            <column name="manufacturer_id" value="8"/>
+            <column name="model_name" value="Nexia"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="71"/>
+            <column name="manufacturer_id" value="8"/>
+            <column name="model_name" value="Winstorm"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="72-73">
+        <comment>DATSUN</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="72"/>
+            <column name="manufacturer_id" value="9"/>
+            <column name="model_name" value="mi-Do"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="73"/>
+            <column name="manufacturer_id" value="9"/>
+            <column name="model_name" value="on-Do"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="74-78">
+        <comment>FIAT</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="74"/>
+            <column name="manufacturer_id" value="10"/>
+            <column name="model_name" value="Albea"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="75"/>
+            <column name="manufacturer_id" value="10"/>
+            <column name="model_name" value="Barchetta"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="76"/>
+            <column name="manufacturer_id" value="10"/>
+            <column name="model_name" value="Brava"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="77"/>
+            <column name="manufacturer_id" value="10"/>
+            <column name="model_name" value="Bravo"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="78"/>
+            <column name="manufacturer_id" value="10"/>
+            <column name="model_name" value="Doblo"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="79-85">
+        <comment>FORD</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="79"/>
+            <column name="manufacturer_id" value="11"/>
+            <column name="model_name" value="Focus"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="80"/>
+            <column name="manufacturer_id" value="11"/>
+            <column name="model_name" value="Fiesta"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="81"/>
+            <column name="manufacturer_id" value="11"/>
+            <column name="model_name" value="Galaxy"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="82"/>
+            <column name="manufacturer_id" value="11"/>
+            <column name="model_name" value="Kuga"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="83"/>
+            <column name="manufacturer_id" value="11"/>
+            <column name="model_name" value="Maverick"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="84"/>
+            <column name="manufacturer_id" value="11"/>
+            <column name="model_name" value="Mondeo"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="85"/>
+            <column name="manufacturer_id" value="11"/>
+            <column name="model_name" value="Ranger"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="86-88">
+        <comment>GEELY</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="86"/>
+            <column name="manufacturer_id" value="12"/>
+            <column name="model_name" value="Emgrand"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="87"/>
+            <column name="manufacturer_id" value="12"/>
+            <column name="model_name" value="MK"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="88"/>
+            <column name="manufacturer_id" value="12"/>
+            <column name="model_name" value="Otaka"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="89-101">
+        <comment>HONDA</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="89"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Accord"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="90"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Civic"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="91"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="CR-V"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="92"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Element"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="93"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="FR-V"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="94"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="HR-V"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="95"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Insight"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="96"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Jazz"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="97"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Legend"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="98"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Pilot"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="99"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Ridgeline"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="100"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Stepwagon"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="101"/>
+            <column name="manufacturer_id" value="13"/>
+            <column name="model_name" value="Stream"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="102-103">
+        <comment>HUMMER</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="102"/>
+            <column name="manufacturer_id" value="14"/>
+            <column name="model_name" value="H2"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="103"/>
+            <column name="manufacturer_id" value="14"/>
+            <column name="model_name" value="H3"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="104-122">
+        <comment>HYUNDAI</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="104"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Accent"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="105"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Elantra"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="106"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Equus"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="107"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Genesis"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="108"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Getz"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="109"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Grand Santa Fe"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="110"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Grandeur"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="111"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="i10"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="112"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="i20"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="113"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="i30"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="114"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="i40"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="115"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="ix35"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="116"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Matrix"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="117"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Santa Fe"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="118"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Solaris"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="119"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Sonata"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="120"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Terracan"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="121"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Tucson"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="122"/>
+            <column name="manufacturer_id" value="15"/>
+            <column name="model_name" value="Trajet"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="123-133">
+        <comment>INFINITY</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="123"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="EX"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="124"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="FX"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="125"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="G"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="126"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="JX"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="127"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="M"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="128"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="M35"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="129"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="M45"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="130"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="Q50"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="131"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="Q70"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="132"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="QX4"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="133"/>
+            <column name="manufacturer_id" value="16"/>
+            <column name="model_name" value="QX50"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="135-138">
+        <comment>JAGUAR</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="135"/>
+            <column name="manufacturer_id" value="17"/>
+            <column name="model_name" value="S-Type"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="136"/>
+            <column name="manufacturer_id" value="17"/>
+            <column name="model_name" value="XF"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="137"/>
+            <column name="manufacturer_id" value="17"/>
+            <column name="model_name" value="XJ V"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="138"/>
+            <column name="manufacturer_id" value="17"/>
+            <column name="model_name" value="X-Type"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="139-144">
+        <comment>JEEP</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="139"/>
+            <column name="manufacturer_id" value="18"/>
+            <column name="model_name" value="Cherokee"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="140"/>
+            <column name="manufacturer_id" value="18"/>
+            <column name="model_name" value="Commander"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="141"/>
+            <column name="manufacturer_id" value="18"/>
+            <column name="model_name" value="Compas"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="142"/>
+            <column name="manufacturer_id" value="18"/>
+            <column name="model_name" value="Grand Cherokke"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="143"/>
+            <column name="manufacturer_id" value="18"/>
+            <column name="model_name" value="Liberty"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="144"/>
+            <column name="manufacturer_id" value="18"/>
+            <column name="model_name" value="Wrangler"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="145-153">
+        <comment>KIA</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="145"/>
+            <column name="manufacturer_id" value="19"/>
+            <column name="model_name" value="Carens"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="146"/>
+            <column name="manufacturer_id" value="19"/>
+            <column name="model_name" value="Ceed"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="147"/>
+            <column name="manufacturer_id" value="19"/>
+            <column name="model_name" value="Cerato"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="148"/>
+            <column name="manufacturer_id" value="19"/>
+            <column name="model_name" value="Magentis"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="149"/>
+            <column name="manufacturer_id" value="19"/>
+            <column name="model_name" value="Optima"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="150"/>
+            <column name="manufacturer_id" value="19"/>
+            <column name="model_name" value="Rio"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="151"/>
+            <column name="manufacturer_id" value="19"/>
+            <column name="model_name" value="Sorento"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="152"/>
+            <column name="manufacturer_id" value="19"/>
+            <column name="model_name" value="Sportage"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="153"/>
+            <column name="manufacturer_id" value="19"/>
+            <column name="model_name" value="K5"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="154-157">
+        <comment>Land Rover</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="154"/>
+            <column name="manufacturer_id" value="20"/>
+            <column name="model_name" value="Defender"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="155"/>
+            <column name="manufacturer_id" value="20"/>
+            <column name="model_name" value="Discovery"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="156"/>
+            <column name="manufacturer_id" value="20"/>
+            <column name="model_name" value="Freelander"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="157"/>
+            <column name="manufacturer_id" value="20"/>
+            <column name="model_name" value="Range Rover"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="158-165">
+        <comment>LEXUS</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="158"/>
+            <column name="manufacturer_id" value="21"/>
+            <column name="model_name" value="CT"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="159"/>
+            <column name="manufacturer_id" value="21"/>
+            <column name="model_name" value="ES"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="160"/>
+            <column name="manufacturer_id" value="21"/>
+            <column name="model_name" value="GS"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="161"/>
+            <column name="manufacturer_id" value="21"/>
+            <column name="model_name" value="IS"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="162"/>
+            <column name="manufacturer_id" value="21"/>
+            <column name="model_name" value="LX"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="163"/>
+            <column name="manufacturer_id" value="21"/>
+            <column name="model_name" value="NX"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="164"/>
+            <column name="manufacturer_id" value="21"/>
+            <column name="model_name" value="RX"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="165"/>
+            <column name="manufacturer_id" value="21"/>
+            <column name="model_name" value="SC"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="166-167">
+        <comment>LIFAN</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="166"/>
+            <column name="manufacturer_id" value="22"/>
+            <column name="model_name" value="Smily"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="167"/>
+            <column name="manufacturer_id" value="22"/>
+            <column name="model_name" value="X60"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="168-176">
+        <comment>MAZDA</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="168"/>
+            <column name="manufacturer_id" value="23"/>
+            <column name="model_name" value="CX-5"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="169"/>
+            <column name="manufacturer_id" value="23"/>
+            <column name="model_name" value="CX-7"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="170"/>
+            <column name="manufacturer_id" value="23"/>
+            <column name="model_name" value="CX-9"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="171"/>
+            <column name="manufacturer_id" value="23"/>
+            <column name="model_name" value="Mazda2"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="172"/>
+            <column name="manufacturer_id" value="23"/>
+            <column name="model_name" value="Mazda3"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="173"/>
+            <column name="manufacturer_id" value="23"/>
+            <column name="model_name" value="Mazda5"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="174"/>
+            <column name="manufacturer_id" value="23"/>
+            <column name="model_name" value="Mazda6"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="175"/>
+            <column name="manufacturer_id" value="23"/>
+            <column name="model_name" value="MPV"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="176"/>
+            <column name="manufacturer_id" value="23"/>
+            <column name="model_name" value="RX-8"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="177-190">
+        <comment>MERCEDES</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="177"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="A"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="178"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="B"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="179"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="C"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="180"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="CL"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="181"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="CLA"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="182"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="CLC"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="183"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="CLS"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="184"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="E"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="185"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="G"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="186"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="GL"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="187"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="GLA"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="188"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="S"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="189"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="SL"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="190"/>
+            <column name="manufacturer_id" value="24"/>
+            <column name="model_name" value="SLS"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="191-196">
+        <comment>MITSUBISHI</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="191"/>
+            <column name="manufacturer_id" value="25"/>
+            <column name="model_name" value="ASX"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="192"/>
+            <column name="manufacturer_id" value="25"/>
+            <column name="model_name" value="Carisma"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="193"/>
+            <column name="manufacturer_id" value="25"/>
+            <column name="model_name" value="Galant"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="194"/>
+            <column name="manufacturer_id" value="25"/>
+            <column name="model_name" value="Lancer"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="195"/>
+            <column name="manufacturer_id" value="25"/>
+            <column name="model_name" value="Outlander"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="196"/>
+            <column name="manufacturer_id" value="25"/>
+            <column name="model_name" value="Pajero"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="197-207">
+        <comment>NISSAN</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="197"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="350 Z"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="198"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="Almeora"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="199"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="Juke"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="200"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="Murano"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="201"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="Pathfinder"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="202"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="Primera"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="203"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="Qashqai"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="204"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="Sentra"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="205"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="Teana"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="206"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="Tiida"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="207"/>
+            <column name="manufacturer_id" value="26"/>
+            <column name="model_name" value="X-Trail"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="208-210">
+        <comment>OPEL</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="208"/>
+            <column name="manufacturer_id" value="27"/>
+            <column name="model_name" value="Astra"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="209"/>
+            <column name="manufacturer_id" value="27"/>
+            <column name="model_name" value="Corsa"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="210"/>
+            <column name="manufacturer_id" value="27"/>
+            <column name="model_name" value="Omega"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="211-221">
+        <comment>PEUGEOT</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="211"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="1007"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="212"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="107"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="213"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="206"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="214"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="207"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="215"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="208"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="216"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="3008"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="217"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="307"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="218"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="308"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="219"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="307"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="220"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="407"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="221"/>
+            <column name="manufacturer_id" value="28"/>
+            <column name="model_name" value="4008"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="222-222">
+        <comment>PONTIAC</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="222"/>
+            <column name="manufacturer_id" value="29"/>
+            <column name="model_name" value="Vibe"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="223-223">
+        <comment>PORSCHE</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="223"/>
+            <column name="manufacturer_id" value="30"/>
+            <column name="model_name" value="Macan"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="224-227">
+        <comment>RENAULT</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="224"/>
+            <column name="manufacturer_id" value="31"/>
+            <column name="model_name" value="Clio"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="225"/>
+            <column name="manufacturer_id" value="31"/>
+            <column name="model_name" value="Fluence"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="226"/>
+            <column name="manufacturer_id" value="31"/>
+            <column name="model_name" value="Laguna"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="227"/>
+            <column name="manufacturer_id" value="31"/>
+            <column name="model_name" value="Megane"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="228-232">
+        <comment>SKODA</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="228"/>
+            <column name="manufacturer_id" value="32"/>
+            <column name="model_name" value="Favia"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="229"/>
+            <column name="manufacturer_id" value="32"/>
+            <column name="model_name" value="Octavia"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="230"/>
+            <column name="manufacturer_id" value="32"/>
+            <column name="model_name" value="Rapid"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="231"/>
+            <column name="manufacturer_id" value="32"/>
+            <column name="model_name" value="Superb"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="232"/>
+            <column name="manufacturer_id" value="32"/>
+            <column name="model_name" value="Yeti"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="233-237">
+        <comment>CHEVROLET</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="233"/>
+            <column name="manufacturer_id" value="33"/>
+            <column name="model_name" value="Actyon"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="234"/>
+            <column name="manufacturer_id" value="33"/>
+            <column name="model_name" value="Chairman"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="235"/>
+            <column name="manufacturer_id" value="33"/>
+            <column name="model_name" value="Korando"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="236"/>
+            <column name="manufacturer_id" value="33"/>
+            <column name="model_name" value="Kyron"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="237"/>
+            <column name="manufacturer_id" value="33"/>
+            <column name="model_name" value="Musso"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="238-241">
+        <comment>SUBARU</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="238"/>
+            <column name="manufacturer_id" value="34"/>
+            <column name="model_name" value="BRZ"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="239"/>
+            <column name="manufacturer_id" value="34"/>
+            <column name="model_name" value="Forester"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="240"/>
+            <column name="manufacturer_id" value="34"/>
+            <column name="model_name" value="Impereza"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="241"/>
+            <column name="manufacturer_id" value="34"/>
+            <column name="model_name" value="Legacy"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="242-245">
+        <comment>SUZUKI</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="242"/>
+            <column name="manufacturer_id" value="35"/>
+            <column name="model_name" value="Grand Vitara"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="243"/>
+            <column name="manufacturer_id" value="35"/>
+            <column name="model_name" value="SX4"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="244"/>
+            <column name="manufacturer_id" value="35"/>
+            <column name="model_name" value="Wagon"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="245"/>
+            <column name="manufacturer_id" value="35"/>
+            <column name="model_name" value="Swift"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="246-254">
+        <comment>TOYOTA</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="246"/>
+            <column name="manufacturer_id" value="36"/>
+            <column name="model_name" value="Auris"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="247"/>
+            <column name="manufacturer_id" value="36"/>
+            <column name="model_name" value="Avensis"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="248"/>
+            <column name="manufacturer_id" value="36"/>
+            <column name="model_name" value="Camry"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="249"/>
+            <column name="manufacturer_id" value="36"/>
+            <column name="model_name" value="Corolla"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="250"/>
+            <column name="manufacturer_id" value="36"/>
+            <column name="model_name" value="Hilux"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="251"/>
+            <column name="manufacturer_id" value="36"/>
+            <column name="model_name" value="Land Cruiser"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="252"/>
+            <column name="manufacturer_id" value="36"/>
+            <column name="model_name" value="Rav 4"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="253"/>
+            <column name="manufacturer_id" value="36"/>
+            <column name="model_name" value="Yaris"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="254"/>
+            <column name="manufacturer_id" value="36"/>
+            <column name="model_name" value="Prius"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="255-260">
+        <comment>VOLKSWAGEN</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="255"/>
+            <column name="manufacturer_id" value="37"/>
+            <column name="model_name" value="Golf"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="256"/>
+            <column name="manufacturer_id" value="37"/>
+            <column name="model_name" value="Jetta"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="257"/>
+            <column name="manufacturer_id" value="37"/>
+            <column name="model_name" value="Passat"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="258"/>
+            <column name="manufacturer_id" value="37"/>
+            <column name="model_name" value="Polo"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="259"/>
+            <column name="manufacturer_id" value="37"/>
+            <column name="model_name" value="Tiguan"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="260"/>
+            <column name="manufacturer_id" value="37"/>
+            <column name="model_name" value="Touareg"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="261-268">
+        <comment>VOLVO</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="261"/>
+            <column name="manufacturer_id" value="38"/>
+            <column name="model_name" value="C30"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="262"/>
+            <column name="manufacturer_id" value="38"/>
+            <column name="model_name" value="S40"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="263"/>
+            <column name="manufacturer_id" value="38"/>
+            <column name="model_name" value="S60"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="264"/>
+            <column name="manufacturer_id" value="38"/>
+            <column name="model_name" value="S70"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="265"/>
+            <column name="manufacturer_id" value="38"/>
+            <column name="model_name" value="S80"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="266"/>
+            <column name="manufacturer_id" value="38"/>
+            <column name="model_name" value="XC60"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="267"/>
+            <column name="manufacturer_id" value="38"/>
+            <column name="model_name" value="XC70"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="268"/>
+            <column name="manufacturer_id" value="38"/>
+            <column name="model_name" value="XC90"/>
+
+        </insert>
+
+    </changeSet>
+
+
+    <changeSet author="ZmaevDA" id="269-272">
+        <comment>LADA</comment>
+
+        <insert tableName="car_model">
+            <column name="id" value="269"/>
+            <column name="manufacturer_id" value="39"/>
+            <column name="model_name" value="GRANTA"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="270"/>
+            <column name="manufacturer_id" value="39"/>
+            <column name="model_name" value="KALINA"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="271"/>
+            <column name="manufacturer_id" value="39"/>
+            <column name="model_name" value="VESTA"/>
+
+        </insert>
+
+        <insert tableName="car_model">
+            <column name="id" value="272"/>
+            <column name="manufacturer_id" value="39"/>
+            <column name="model_name" value="X-RAY"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet author="ZmaevDA" id="2138721322318-1">
+        <insert tableName="engine_type">
+            <column name="id" value="1"/>
+            <column name="engine_name" value="1.4 16V 8FS (EP3)"/>
+            <column name="engine_capacity" value="1.4"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="2"/>
+            <column name="engine_name" value="1.4 16V"/>
+            <column name="engine_capacity" value="1.4"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="3"/>
+            <column name="engine_name" value="1.6 16V 5FE (EP6CDT)"/>
+            <column name="engine_capacity" value="1.6"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="4"/>
+            <column name="engine_name" value="1.6 16V 5FS (EP6C); 5FW (EP6); EP6"/>
+            <column name="engine_capacity" value="1.6"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="5"/>
+            <column name="engine_name" value="1.6 16V 5FX (EP6DT)"/>
+            <column name="engine_capacity" value="1.6"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="6"/>
+            <column name="engine_name" value="1.6 16V 5FY (EP6DTS)"/>
+            <column name="engine_capacity" value="1.6"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="7"/>
+            <column name="engine_name" value="1.6 HDi 9HV (DV6ATED4); 9HX (DV6ATED4)"/>
+            <column name="engine_capacity" value="1.6"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="8"/>
+            <column name="engine_name" value="1.6 HDi 9HZ (DV6TED4)"/>
+            <column name="engine_capacity" value="1.6"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="9"/>
+            <column name="engine_name" value="1.6 HDi 9HR (DV6C)"/>
+            <column name="engine_capacity" value="1.6"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="10"/>
+            <column name="engine_name" value="1.6 HDi 9HP (DV6DTED)"/>
+            <column name="engine_capacity" value="1.6"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="11"/>
+            <column name="engine_name" value="2.0 HDi RHH (DW10CTED4)"/>
+            <column name="engine_capacity" value="2.0"/>
+        </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="12"/>
+            <column name="engine_name" value="2.0 HDi RHR (DW10BTED4)"/>
+            <column name="engine_capacity" value="2.0"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

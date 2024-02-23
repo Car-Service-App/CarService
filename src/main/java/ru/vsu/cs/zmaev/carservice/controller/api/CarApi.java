@@ -58,7 +58,7 @@ public interface CarApi {
             String carType,
             @Parameter(description = "Год выпуска")
             @RequestParam(required = false)
-            Instant releaseYear,
+            Integer releaseYear,
             @Parameter(description = "Название производителя автомобиля")
             @RequestParam(required = false)
             String brandName,
