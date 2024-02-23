@@ -80,6 +80,27 @@ public class CarServiceImpl implements CarService {
         return carMapper.toDto(carRepository.save(car));
     }
 
+//    @Override
+//    @Transactional
+//    public CarResponseDto save(CarRequestDto carRequestDto) {
+//        Car car = carMapper.toEntity(carRequestDto);
+//        CarEngine carEngine = new CarEngine();
+//        CarModel carModel = carModelRepository.findById(carRequestDto.getCarModelId()).orElseThrow(() ->
+//                new NoSuchEntityException(CarModel.class, carRequestDto.getCarModelId()));
+//        Transmission transmission = transmissionRepository.findById(carRequestDto.getTransmissionId()).orElseThrow(() ->
+//                new NoSuchEntityException(Transmission.class, carRequestDto.getTransmissionId()));
+//        if (!carRequestDto.getEnginesId().isEmpty()) {
+//            for (Long id: carRequestDto.getEnginesId()) {
+//                Engine engine = engineRepository.findById(id).orElseThrow(() -> new NoSuchEntityException(Engine.class, id));
+//                carEngine.setEngine(engine);
+//                carEngine.setCar(car);
+//                carEngineRepository.save(carEngine);
+//            }
+//        }
+//        car.setCarModel(carModel);
+//        car.setTransmission(transmission);
+//        return carMapper.toDto(carRepository.save(car));
+
     @Override
     @Transactional
     public CarResponseDto update(Long id, CarRequestDto carRequestDto) {

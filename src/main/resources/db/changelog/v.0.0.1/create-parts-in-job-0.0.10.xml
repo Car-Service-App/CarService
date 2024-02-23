@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet author="ZmaevDA" id="143654332543856-1">
+        <insert tableName="parts_in_job">
+            <column name="id" value="1"/>
+            <column name="car_job_id" value="1"/>
+            <column name="car_part_id" value="1"/>
+            <column name="amount" value="1"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

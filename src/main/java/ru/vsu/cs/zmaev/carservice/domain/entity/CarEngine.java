@@ -18,3 +18,21 @@ public class CarEngine {
     @Column(name = "engine_id")
     private Long engineId;
 }
+
+//@Data
+//@Entity
+//@Table(name = "car_engine")
+//public class CarEngine {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id")
+//    private Long id;
+//
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "car_id", referencedColumnName = "id")
+//    private Car car;
+//
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "engine_id", referencedColumnName = "id")
+//    private Engine engine;
+//}
