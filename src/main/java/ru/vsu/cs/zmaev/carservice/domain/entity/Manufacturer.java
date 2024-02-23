@@ -19,6 +19,9 @@ public class Manufacturer {
     @Column(name = "country")
     private String country;
 
+    @Column(name = "logo_link")
+    private String logoLink;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "production")
     private ProductionType productionType;

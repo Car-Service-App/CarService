@@ -18,6 +18,9 @@
             <column name="production" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
+            <column name="logo_link" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
         </createTable>
     </changeSet>
     <changeSet author="ZmaevDA" id="1698581124717-2">
@@ -38,6 +41,19 @@
             </column>
             <column name="transmission_name" type="VARCHAR(255)">
                 <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581234717-31">
+        <createTable tableName="car_engine">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" foreignKeyName="transmission_pkey"/>
+            </column>
+            <column name="car_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="engine_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
     </changeSet>
@@ -65,15 +81,57 @@
             <column name="transmission_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
-            <column name="engine_id" type="BIGINT">
-                <constraints nullable="false" unique="false"/>
-            </column>
             <column name="car_type" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
-            <column name="release_year" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="car_generation" type="INTEGER">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="is_restyling" type="BOOLEAN">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="release_year" type="INTEGER"/>
             <column name="car_image_link" type="VARCHAR(255)">
                 <constraints unique="false" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-123">
+        <createTable tableName="job_type">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="job_type_pkey"/>
+            </column>
+            <column name="job_name" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-125">
+        <createTable tableName="car_job">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="car_job_pkey"/>
+            </column>
+            <column name="job_type_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="car_engine_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-133">
+        <createTable tableName="parts_in_job">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="parts_in_job_pkey"/>
+            </column>
+            <column name="car_job_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="car_part_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="amount" type="INTEGER">
+                <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
     </changeSet>
@@ -95,10 +153,32 @@
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="id" referencedTableName="transmission_type" validate="true"/>
     </changeSet>
-    <changeSet author="ZmaevDA" id="1698581124717-9">
-        <addForeignKeyConstraint baseColumnNames="engine_id" baseTableName="car"
-                                 constraintName="tg9dm134t3ybtjbn86ro5lrin12" deferrable="false"
+    <changeSet id="1698581124717-9" author="ZmaevDA">
+        <addForeignKeyConstraint baseColumnNames="car_id" baseTableName="car_engine"
+                                 constraintName="fk9dmas4t3ybt12386ro5lrinfa" deferrable="false"
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
-                                 referencedColumnNames="id" referencedTableName="engine_type" validate="true"/>
+                                 referencedColumnNames="id" referencedTableName="car" validate="true" />
+        <addForeignKeyConstraint baseColumnNames="engine_id" baseTableName="car_engine"
+                                 constraintName="sf9sxas4t3ybtas386ro5lrinfa"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="engine_type" validate="true" />
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-112">
+        <addForeignKeyConstraint baseColumnNames="job_type_id" baseTableName="car_job"
+                                 constraintName="fk_car_job_job_type"
+                                 referencedColumnNames="id" referencedTableName="job_type"
+                                 validate="true"/>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-113">
+        <addForeignKeyConstraint baseColumnNames="car_job_id" baseTableName="parts_in_job"
+                                 constraintName="fk_parts_in_job_car_job"
+                                 referencedColumnNames="id" referencedTableName="car_job"
+                                 validate="true"/>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1698581124717-116">
+        <addForeignKeyConstraint baseColumnNames="car_engine_id" baseTableName="car_job"
+                                 constraintName="fk_car_job_car_engine"
+                                 referencedColumnNames="id" referencedTableName="car_engine"
+                                 validate="true"/>
     </changeSet>
 </databaseChangeLog>

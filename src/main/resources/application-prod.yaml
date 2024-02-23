@@ -5,3 +5,6 @@ spring:
     password: ${POSTGRES_PASSWORD}
   jpa:
     show-sql: true
+car-parts:
+  service:
+    base-url: http://${REMOTE_SERVER_HOST}:8081

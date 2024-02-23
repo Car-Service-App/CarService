@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import ru.vsu.cs.zmaev.carservice.domain.enums.CarType;
 
-import java.time.Instant;
+import java.util.List;
 
 @Data
 @Schema(description = "Описание класса CarRequestDto")
@@ -12,13 +12,17 @@ public class CarRequestDto {
     @Schema(description = "Тип автомобиля", example = "CABRIOLET")
     private final CarType carType;
     @Schema(description = "Год выпуска автомобиля")
-    private final Instant releaseYear;
+    private final Integer releaseYear;
     @Schema(description = "Модель автомобиля", example = "1")
     private final Long carModelId;
-    @Schema(description = "Id Двигателя автомобиля", example = "1")
-    private final Long engineId;
+    @Schema(description = "Id Двигателей автомобиля")
+    private final List<Long> enginesId;
     @Schema(description = "Id Трансмиссии автомобиля", example = "1")
     private final Long transmissionId;
+    @Schema(description = "Поколение автомобиля", example = "1")
+    private final Integer generation;
+    @Schema(description = "Является ли модель рестайлингом", example = "false")
+    private final Boolean isRestyling;
     @Schema(description = "Id Трансмиссии автомобиля", example = "cars/bmw/m3.img")
     private final String carImageLink;
 }
