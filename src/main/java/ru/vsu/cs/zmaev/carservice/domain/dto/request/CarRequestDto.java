@@ -17,8 +17,6 @@ public class CarRequestDto {
     private final Long carModelId;
     @Schema(description = "Id Двигателей автомобиля")
     private final List<Long> enginesId;
-    @Schema(description = "Id Трансмиссии автомобиля", example = "1")
-    private final Long transmissionId;
     @Schema(description = "Поколение автомобиля", example = "1")
     private final Integer generation;
     @Schema(description = "Является ли модель рестайлингом", example = "false")

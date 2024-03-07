@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class CarJobRequestDto {
     private final Long jobTypeId;
-    private final Long carEngineId;
+    private final Long carConfigId;
 }

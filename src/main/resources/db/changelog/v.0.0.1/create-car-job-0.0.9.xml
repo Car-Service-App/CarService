@@ -8,22 +8,22 @@
         <insert tableName="car_job">
             <column name="id" value="1"/>
             <column name="job_type_id" value="1"/>
-            <column name="car_engine_id" value="1"/>
+            <column name="car_config_id" value="1"/>
         </insert>
         <insert tableName="car_job">
             <column name="id" value="2"/>
             <column name="job_type_id" value="2"/>
-            <column name="car_engine_id" value="1"/>
+            <column name="car_config_id" value="1"/>
         </insert>
         <insert tableName="car_job">
             <column name="id" value="3"/>
             <column name="job_type_id" value="3"/>
-            <column name="car_engine_id" value="1"/>
+            <column name="car_config_id" value="1"/>
         </insert>
         <insert tableName="car_job">
             <column name="id" value="4"/>
             <column name="job_type_id" value="4"/>
-            <column name="car_engine_id" value="1"/>
+            <column name="car_config_id" value="1"/>
         </insert>
 
 

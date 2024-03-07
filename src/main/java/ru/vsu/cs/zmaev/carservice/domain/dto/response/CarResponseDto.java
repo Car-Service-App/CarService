@@ -2,6 +2,7 @@ package ru.vsu.cs.zmaev.carservice.domain.dto.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
+import ru.vsu.cs.zmaev.carservice.domain.entity.CarConfig;
 import ru.vsu.cs.zmaev.carservice.domain.entity.Engine;
 import ru.vsu.cs.zmaev.carservice.domain.enums.CarType;
 import ru.vsu.cs.zmaev.carservice.domain.enums.TransmissionType;
@@ -20,10 +21,8 @@ public class CarResponseDto {
     private final Integer releaseYear;
     @Schema(description = "Модель автомобиля")
     private final CarModelResponseDto carModel;
-    @Schema(description = "Трансмиссия автомобиля", example = "RWD")
-    private TransmissionType transmission;
     @Schema(description = "Двигатели данной модели")
-    private List<EngineResponseDto> engines;
+    private List<CarConfigResponseDto> carConfigs;
     @Schema(description = "Ссылка на изображение автомобиля")
     private final String carImageLink;
 }

@@ -17,6 +17,6 @@ public class CarJob {
     private JobType jobType;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "car_engine_id", nullable = false)
-    private CarEngine carEngine;
+    @JoinColumn(name = "car_config_id", nullable = false)
+    private CarConfig carConfig;
 }

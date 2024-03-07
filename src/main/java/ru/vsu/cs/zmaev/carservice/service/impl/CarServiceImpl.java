@@ -9,8 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.vsu.cs.zmaev.carservice.domain.dto.EntityPage;
 import ru.vsu.cs.zmaev.carservice.domain.dto.criteria.CarCriteriaSearch;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarRequestDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarConfigResponseDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarResponseDto;
 import ru.vsu.cs.zmaev.carservice.domain.entity.*;
+import ru.vsu.cs.zmaev.carservice.domain.mapper.CarConfigMapper;
 import ru.vsu.cs.zmaev.carservice.domain.mapper.CarMapper;
 import ru.vsu.cs.zmaev.carservice.exception.NoSuchEntityException;
 import ru.vsu.cs.zmaev.carservice.repository.*;
@@ -25,9 +27,8 @@ public class CarServiceImpl implements CarService {
 
     private final CarRepository carRepository;
     private final CarModelRepository carModelRepository;
-    private final CarEngineRepository carEngineRepository;
+    private final CarConfigRepository carConfigRepository;
     private final EngineRepository engineRepository;
-    private final TransmissionRepository transmissionRepository;
     private final CriteriaRepository<Car, CarCriteriaSearch> carCriteriaRepository;
     private final CarMapper carMapper;
 
@@ -62,21 +63,18 @@ public class CarServiceImpl implements CarService {
         Car car = carMapper.toEntity(carRequestDto);
         CarModel carModel = carModelRepository.findById(carRequestDto.getCarModelId()).orElseThrow(() ->
                 new NoSuchEntityException(CarModel.class, carRequestDto.getCarModelId()));
-        Transmission transmission = transmissionRepository.findById(carRequestDto.getTransmissionId()).orElseThrow(() ->
-                new NoSuchEntityException(Transmission.class, carRequestDto.getTransmissionId()));
         if (!carRequestDto.getEnginesId().isEmpty()) {
             for (Long id: carRequestDto.getEnginesId()) {
                 engineRepository.findById(id).orElseThrow(() -> new NoSuchEntityException(Engine.class, id));
             }
             for (Long id: carRequestDto.getEnginesId()){
-                CarEngine carEngine = new CarEngine();
-                carEngine.setCarId(carRequestDto.getCarModelId());
-                carEngine.setEngineId(id);
-                carEngineRepository.save(carEngine);
+                CarConfig carConfig = new CarConfig();
+                carConfig.setCar(car);
+                carConfig.setEngineId(id);
+                carConfigRepository.save(carConfig);
             }
         }
         car.setCarModel(carModel);
-        car.setTransmission(transmission);
         return carMapper.toDto(carRepository.save(car));
     }
 
