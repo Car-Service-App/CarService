@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import ru.vsu.cs.zmaev.carservice.domain.enums.CarType;
 
-import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -36,7 +35,7 @@ public class Car {
     @JoinColumn(name = "car_model_id", referencedColumnName = "id")
     private CarModel carModel;
 
-    @OneToMany(mappedBy = "car")
+    @OneToMany(mappedBy = "car", cascade = CascadeType.REMOVE)
     private List<CarConfig> carConfigs;
 
     @ManyToMany

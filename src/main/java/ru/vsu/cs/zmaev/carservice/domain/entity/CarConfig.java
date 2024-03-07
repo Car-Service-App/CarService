@@ -13,7 +13,7 @@ public class CarConfig {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "car_id")
+    @JoinColumn(name = "car_id", referencedColumnName = "id")
     private Car car;
 
     @Column(name = "engine_id")
