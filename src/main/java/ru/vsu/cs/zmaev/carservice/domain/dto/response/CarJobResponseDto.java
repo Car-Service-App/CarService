@@ -8,6 +8,6 @@ import lombok.RequiredArgsConstructor;
 public class CarJobResponseDto {
     private final Long id;
     private final Long engineId;
-    private final JobTypeResponseDto jobTypeResponseDto;
-    private final CarResponseDto carResponseDto;
+    private final JobTypeResponseDto jobType;
+    private final CarResponseDto car;
 }

@@ -32,13 +32,10 @@ public class CarJobServiceImpl implements CarJobService {
 
     private final CarJobMapper carJobMapper;
     private final CarJobRepository carJobRepository;
-
     private final JobTypeRepository jobTypeRepository;
     private final JobTypeMapper jobTypeMapper;
-
     private final CarRepository carRepository;
     private final CarMapper carMapper;
-
     private final CarConfigRepository carConfigRepository;
 
     @Override
@@ -84,12 +81,14 @@ public class CarJobServiceImpl implements CarJobService {
     @Override
     @Transactional
     public CarJobResponseDto update(Long id, CarJobRequestDto dto) {
+        // Impl logic
         return null;
     }
 
     @Override
     @Transactional
     public void delete(Long id) {
+        // Impl logic
     }
 
     private CarJobResponseDto mapToDto(CarJob carJob) {
