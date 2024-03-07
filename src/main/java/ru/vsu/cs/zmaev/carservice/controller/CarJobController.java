@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.vsu.cs.zmaev.carservice.controller.api.CarJobApi;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarJobRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarJobResponseDto;
 import ru.vsu.cs.zmaev.carservice.service.CarJobService;
@@ -14,7 +15,7 @@ import ru.vsu.cs.zmaev.carservice.service.CarJobService;
 @RestController
 @RequestMapping("api/car-job")
 @RequiredArgsConstructor
-public class CarJobController {
+public class CarJobController implements CarJobApi {
 
     private final CarJobService carJobService;
 
