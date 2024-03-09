@@ -19,4 +19,10 @@ public class CarJob {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "car_config_id", nullable = false)
     private CarConfig carConfig;
+
+    @Column(name = "mileage")
+    private Long mileage;
+
+    @Column(name = "time")
+    private Integer time;
 }

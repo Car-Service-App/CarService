@@ -10,6 +10,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import ru.vsu.cs.zmaev.carservice.domain.dto.ErrorMessage;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarJobRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarJobResponseDto;
 
@@ -33,6 +35,35 @@ public interface CarJobApi {
     ResponseEntity<Page<CarJobResponseDto>> findAll(
             @Parameter(description = "Номер страницы") Integer pagePosition,
             @Parameter(description = "Размер страницы") Integer pageSize
+    );
+
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Успешный возврат списка работ по автомобилям",
+                    content = {
+                            @Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(implementation = CarJobResponseDto.class)
+                            )
+                    }
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Сущность по переданному id не существует",
+                    content = {
+                            @Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(implementation = ErrorMessage.class)
+                            )
+                    }
+            )
+    })
+    @Operation(summary = "Получение всех работ по автомобилям")
+    ResponseEntity<Page<CarJobResponseDto>> findAllByCarConfig(
+            @Parameter(description = "Номер страницы") Integer pagePosition,
+            @Parameter(description = "Размер страницы") Integer pageSize,
+            @RequestBody Long carConfigId
     );
 
     @ApiResponses(value = {

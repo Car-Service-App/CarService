@@ -21,5 +21,46 @@
             <column name="id" value="4"/>
             <column name="job_name" value="TIMING_CHANGE"/>
         </insert>
+        <insert tableName="job_type">
+            <column name="id" value="5"/>
+            <column name="job_name" value="EXHAUST PIPES"/>
+        </insert>
+        <insert tableName="job_type">
+            <column name="id" value="6"/>
+            <column name="job_name" value="SPARK_PLUG"/>
+        </insert>
+        <insert tableName="job_type">
+            <column name="id" value="7"/>
+            <column name="job_name" value="COOLING_HEATING_SYSTEM"/>
+        </insert>
+        <insert tableName="job_type">
+            <column name="id" value="8"/>
+            <column name="job_name" value="RECHARGEABLE_BATTERIES"/>
+        </insert>
+        <insert tableName="job_type">
+            <column name="id" value="9"/>
+            <column name="job_name" value="FUEL_FILTER"/>
+        </insert>
+        <insert tableName="job_type">
+            <column name="id" value="10"/>
+            <column name="job_name" value="VALVE_MECHANISM"/>
+        </insert>
+        <insert tableName="job_type">
+            <column name="id" value="11"/>
+            <column name="job_name" value="AIR_FILTER"/>
+        </insert>
+        <insert tableName="job_type">
+            <column name="id" value="12"/>
+            <column name="job_name" value="BRAKE_FLUID"/>
+        </insert>
+        <insert tableName="job_type">
+            <column name="id" value="13"/>
+            <column name="job_name" value="VACUUM_PUMP"/>
+        </insert>
+        <insert tableName="job_type">
+            <column name="id" value="14"/>
+            <column name="job_name" value="AIR_CONDITIONING_FILTER"/>
+        </insert>
+
     </changeSet>
 </databaseChangeLog>

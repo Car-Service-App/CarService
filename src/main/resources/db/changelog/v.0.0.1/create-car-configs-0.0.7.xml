@@ -41,5 +41,11 @@
             <column name="engine_id" value="6"/>
             <column name="transmission_id" value="3"/>
         </insert>
+        <insert tableName="car_config">
+            <column name="id" value="7"/>
+            <column name="car_id" value="13"/>
+            <column name="engine_id" value="13"/>
+            <column name="transmission_id" value="3"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

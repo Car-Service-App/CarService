@@ -64,7 +64,7 @@ public class CarCriteriaRepository extends AbstractCriteriaRepository<Car, CarCr
                     customJoin.get("transmissionType"), "%" + searchCriteria.getTransmission() + "%"));
         }
         if (Objects.nonNull(searchCriteria.getReleaseYear())) {
-            predicates.add(criteriaBuilder.like(root.get("releaseYear"), "%" + searchCriteria.getReleaseYear() + "%"));
+            predicates.add(criteriaBuilder.equal(root.get("releaseYear"), searchCriteria.getReleaseYear()));
         }
         if (Objects.nonNull(searchCriteria.getCarType()) && !searchCriteria.getCarType().isEmpty()) {
             try {

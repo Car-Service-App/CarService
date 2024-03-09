@@ -11,5 +11,23 @@
             <column name="car_part_id" value="1"/>
             <column name="amount" value="1"/>
         </insert>
+        <insert tableName="parts_in_job">
+            <column name="id" value="2"/>
+            <column name="car_job_id" value="5"/>
+            <column name="car_part_id" value="2"/>
+            <column name="amount" value="1"/>
+        </insert>
+        <insert tableName="parts_in_job">
+            <column name="id" value="3"/>
+            <column name="car_job_id" value="5"/>
+            <column name="car_part_id" value="3"/>
+            <column name="amount" value="1"/>
+        </insert>
+        <insert tableName="parts_in_job">
+            <column name="id" value="4"/>
+            <column name="car_job_id" value="6"/>
+            <column name="car_part_id" value="4"/>
+            <column name="amount" value="4"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

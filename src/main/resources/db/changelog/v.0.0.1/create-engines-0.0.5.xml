@@ -65,5 +65,10 @@
             <column name="engine_name" value="2.0 HDi RHR (DW10BTED4)"/>
             <column name="engine_capacity" value="2.0"/>
         </insert>
+        <insert tableName="engine_type">
+            <column name="id" value="13"/>
+            <column name="engine_name" value="1ZR-FE"/>
+            <column name="engine_capacity" value="1.6"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

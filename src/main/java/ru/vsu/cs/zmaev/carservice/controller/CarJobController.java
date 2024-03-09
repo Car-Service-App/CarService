@@ -30,6 +30,17 @@ public class CarJobController implements CarJobApi {
         return ResponseEntity.ok().body(carJobs);
     }
 
+    @GetMapping(value = "/car-config/{carConfigId}",produces = "application/json")
+    public ResponseEntity<Page<CarJobResponseDto>> findAllByCarConfig(
+            @RequestParam(defaultValue = "0") Integer page,
+            @RequestParam(defaultValue = "10") Integer size,
+            @PathVariable Long carConfigId
+    ) {
+        Page<CarJobResponseDto> carJobs = carJobService
+                .findAllByCarConfig(PageRequest.of(page, size), carConfigId);
+        return ResponseEntity.ok().body(carJobs);
+    }
+
     @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<CarJobResponseDto> findOneById(@PathVariable Long id) {
         CarJobResponseDto carJob = carJobService.findOneById(id);

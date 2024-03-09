@@ -8,8 +8,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestParam;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.JobTypeRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.JobTypeResponseDto;
 
@@ -30,8 +32,8 @@ public interface JobTypeApi {
     })
     @Operation(summary = "Получение всех типов задач")
     ResponseEntity<Page<JobTypeResponseDto>> findAll(
-            @Parameter(description = "Номер страницы") Integer pagePosition,
-            @Parameter(description = "Размер страницы") Integer pageSize
+            @RequestParam(defaultValue = "0") @Min(0) Integer pagePosition,
+            @RequestParam(defaultValue = "10") @Min(1) Integer pageSize
     );
 
     @ApiResponses(value = {

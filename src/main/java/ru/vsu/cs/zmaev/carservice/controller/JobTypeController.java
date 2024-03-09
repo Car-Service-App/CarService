@@ -1,6 +1,7 @@
 package ru.vsu.cs.zmaev.carservice.controller;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,8 +22,8 @@ public class JobTypeController implements JobTypeApi {
 
     @GetMapping(produces = "application/json")
     public ResponseEntity<Page<JobTypeResponseDto>> findAll(
-            @RequestParam Integer pagePosition,
-            @RequestParam Integer pageSize
+            @RequestParam(defaultValue = "0") @Min(0) Integer pagePosition,
+            @RequestParam(defaultValue = "10") @Min(1) Integer pageSize
     ) {
         return ResponseEntity
                 .status(HttpStatus.OK)

@@ -11,6 +11,9 @@ public interface CarJobService {
     Page<CarJobResponseDto> findAll(Pageable pageable);
 
     @Transactional(readOnly = true)
+    Page<CarJobResponseDto> findAllByCarConfig(Pageable pageable, Long carConfigId);
+
+    @Transactional(readOnly = true)
     Page<CarJobResponseDto> findAllByJobId(Pageable pageable, Long jobId);
 
     @Transactional(readOnly = true)

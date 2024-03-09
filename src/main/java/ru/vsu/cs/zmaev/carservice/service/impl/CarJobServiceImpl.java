@@ -14,6 +14,7 @@ import ru.vsu.cs.zmaev.carservice.domain.entity.Car;
 import ru.vsu.cs.zmaev.carservice.domain.entity.CarConfig;
 import ru.vsu.cs.zmaev.carservice.domain.entity.CarJob;
 import ru.vsu.cs.zmaev.carservice.domain.entity.JobType;
+import ru.vsu.cs.zmaev.carservice.domain.mapper.CarConfigMapper;
 import ru.vsu.cs.zmaev.carservice.domain.mapper.CarJobMapper;
 import ru.vsu.cs.zmaev.carservice.domain.mapper.CarMapper;
 import ru.vsu.cs.zmaev.carservice.domain.mapper.JobTypeMapper;
@@ -37,11 +38,23 @@ public class CarJobServiceImpl implements CarJobService {
     private final CarRepository carRepository;
     private final CarMapper carMapper;
     private final CarConfigRepository carConfigRepository;
+    private final CarConfigMapper carConfigMapper;
 
     @Override
     @Transactional(readOnly = true)
     public Page<CarJobResponseDto> findAll(Pageable pageable) {
         Page<CarJob> carJobsPage = carJobRepository.findAll(pageable);
+        List<CarJobResponseDto> carJobResponseDtoList = carJobsPage.getContent().stream()
+                .map(this::mapToDto).toList();
+        return new PageImpl<>(carJobResponseDtoList, pageable, carJobsPage.getTotalElements());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<CarJobResponseDto> findAllByCarConfig(Pageable pageable, Long carConfigId) {
+        CarConfig carConfig = carConfigRepository.findById(carConfigId).orElseThrow(() ->
+                new NoSuchEntityException(CarConfig.class, carConfigId));
+        Page<CarJob> carJobsPage = carJobRepository.findAllByCarConfig(pageable, carConfig);
         List<CarJobResponseDto> carJobResponseDtoList = carJobsPage.getContent().stream()
                 .map(this::mapToDto).toList();
         return new PageImpl<>(carJobResponseDtoList, pageable, carJobsPage.getTotalElements());
@@ -98,6 +111,12 @@ public class CarJobServiceImpl implements CarJobService {
         CarResponseDto carResponseDto = carMapper.toDto(
                 carRepository.findById(carJob.getCarConfig().getCar().getId()).orElseThrow(() ->
                         new NoSuchEntityException(Car.class, carJob.getCarConfig().getCar().getId())));
-        return new CarJobResponseDto(carJob.getId(), carJob.getCarConfig().getEngineId(), jobTypeResponseDto, carResponseDto);
+        return new CarJobResponseDto(
+                carJob.getId(),
+                carConfigMapper.toDto(carJob.getCarConfig()),
+                jobTypeResponseDto,
+                carResponseDto,
+                carJob.getMileage(),
+                carJob.getTime());
     }
 }

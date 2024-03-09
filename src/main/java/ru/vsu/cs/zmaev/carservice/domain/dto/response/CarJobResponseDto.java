@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CarJobResponseDto {
     private final Long id;
-    private final Long engineId;
+    private final CarConfigResponseDto carConfig;
     private final JobTypeResponseDto jobType;
     private final CarResponseDto car;
+    private final Long mileage;
+    private final Integer time;
 }
