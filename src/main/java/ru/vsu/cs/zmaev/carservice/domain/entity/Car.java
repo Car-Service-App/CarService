@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import ru.vsu.cs.zmaev.carservice.domain.enums.CarType;
 
-import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -36,12 +35,17 @@ public class Car {
     @JoinColumn(name = "car_model_id", referencedColumnName = "id")
     private CarModel carModel;
 
-    @ManyToOne
-    @JoinColumn(name = "transmission_id", referencedColumnName = "id")
-    private Transmission transmission;
+    @OneToMany(mappedBy = "car", cascade = CascadeType.REMOVE)
+    private List<CarConfig> carConfigs;
 
     @ManyToMany
-    @JoinTable(name = "CarEngine",
+    @JoinTable(name = "CarConfig",
+            joinColumns = @JoinColumn(name = "car_id"),
+            inverseJoinColumns = @JoinColumn(name = "transmission_id"))
+    private List<Transmission> transmissions;
+
+    @ManyToMany
+    @JoinTable(name = "CarConfig",
             joinColumns = @JoinColumn(name = "car_id"),
             inverseJoinColumns = @JoinColumn(name = "engine_id"))
     private List<Engine> engines;

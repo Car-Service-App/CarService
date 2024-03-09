@@ -45,7 +45,7 @@
         </createTable>
     </changeSet>
     <changeSet author="ZmaevDA" id="1698581234717-31">
-        <createTable tableName="car_engine">
+        <createTable tableName="car_config">
             <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" foreignKeyName="transmission_pkey"/>
             </column>
@@ -53,6 +53,9 @@
                 <constraints nullable="false" unique="false"/>
             </column>
             <column name="engine_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="transmission_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
@@ -76,9 +79,6 @@
                 <constraints nullable="false" primaryKey="true" primaryKeyName="car_pkey"/>
             </column>
             <column name="car_model_id" type="BIGINT">
-                <constraints nullable="false" unique="false"/>
-            </column>
-            <column name="transmission_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
             <column name="car_type" type="VARCHAR(255)">
@@ -114,7 +114,13 @@
             <column name="job_type_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
-            <column name="car_engine_id" type="BIGINT">
+            <column name="car_config_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="mileage" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="time" type="INT">
                 <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
@@ -148,17 +154,17 @@
                                  referencedColumnNames="id" referencedTableName="car_model" validate="true"/>
     </changeSet>
     <changeSet author="ZmaevDA" id="1698581124717-8">
-        <addForeignKeyConstraint baseColumnNames="transmission_id" baseTableName="car"
+        <addForeignKeyConstraint baseColumnNames="transmission_id" baseTableName="car_config"
                                  constraintName="fk9dm134t3ybtcsv86ro5lrinfa" deferrable="false"
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="id" referencedTableName="transmission_type" validate="true"/>
     </changeSet>
     <changeSet id="1698581124717-9" author="ZmaevDA">
-        <addForeignKeyConstraint baseColumnNames="car_id" baseTableName="car_engine"
+        <addForeignKeyConstraint baseColumnNames="car_id" baseTableName="car_config"
                                  constraintName="fk9dmas4t3ybt12386ro5lrinfa" deferrable="false"
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="id" referencedTableName="car" validate="true" />
-        <addForeignKeyConstraint baseColumnNames="engine_id" baseTableName="car_engine"
+        <addForeignKeyConstraint baseColumnNames="engine_id" baseTableName="car_config"
                                  constraintName="sf9sxas4t3ybtas386ro5lrinfa"
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="id" referencedTableName="engine_type" validate="true" />
@@ -176,9 +182,9 @@
                                  validate="true"/>
     </changeSet>
     <changeSet author="ZmaevDA" id="1698581124717-116">
-        <addForeignKeyConstraint baseColumnNames="car_engine_id" baseTableName="car_job"
-                                 constraintName="fk_car_job_car_engine"
-                                 referencedColumnNames="id" referencedTableName="car_engine"
+        <addForeignKeyConstraint baseColumnNames="car_config_id" baseTableName="car_job"
+                                 constraintName="fk_car_job_car_config"
+                                 referencedColumnNames="id" referencedTableName="car_config"
                                  validate="true"/>
     </changeSet>
 </databaseChangeLog>

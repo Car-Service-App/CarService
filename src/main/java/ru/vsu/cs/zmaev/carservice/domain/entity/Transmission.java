@@ -19,6 +19,6 @@ public class Transmission {
     @Column(name = "transmission_name")
     private TransmissionType transmissionType;
 
-    @OneToMany(mappedBy = "transmission")
+    @ManyToMany(mappedBy = "transmissions")
     private List<Car> cars;
 }

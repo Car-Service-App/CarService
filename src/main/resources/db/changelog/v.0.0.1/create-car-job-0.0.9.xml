@@ -8,22 +8,78 @@
         <insert tableName="car_job">
             <column name="id" value="1"/>
             <column name="job_type_id" value="1"/>
-            <column name="car_engine_id" value="1"/>
+            <column name="car_config_id" value="1"/>
+            <column name="mileage" value="10000"/>
+            <column name="time" value="6"/>
         </insert>
         <insert tableName="car_job">
             <column name="id" value="2"/>
             <column name="job_type_id" value="2"/>
-            <column name="car_engine_id" value="1"/>
+            <column name="car_config_id" value="1"/>
+            <column name="mileage" value="10000"/>
+            <column name="time" value="6"/>
         </insert>
         <insert tableName="car_job">
             <column name="id" value="3"/>
             <column name="job_type_id" value="3"/>
-            <column name="car_engine_id" value="1"/>
+            <column name="car_config_id" value="1"/>
+            <column name="mileage" value="10000"/>
+            <column name="time" value="6"/>
         </insert>
         <insert tableName="car_job">
             <column name="id" value="4"/>
             <column name="job_type_id" value="4"/>
-            <column name="car_engine_id" value="1"/>
+            <column name="car_config_id" value="1"/>
+            <column name="mileage" value="10000"/>
+            <column name="time" value="6"/>
+        </insert>
+
+        <insert tableName="car_job">
+            <column name="id" value="5"/>
+            <column name="job_type_id" value="1"/>
+            <column name="car_config_id" value="7"/>
+            <column name="mileage" value="5000"/>
+            <column name="time" value="6"/>
+        </insert>
+
+        <insert tableName="car_job">
+            <column name="id" value="6"/>
+            <column name="job_type_id" value="11"/>
+            <column name="car_config_id" value="7"/>
+            <column name="mileage" value="40000"/>
+            <column name="time" value="48"/>
+        </insert>
+
+        <insert tableName="car_job">
+            <column name="id" value="7"/>
+            <column name="job_type_id" value="11"/>
+            <column name="car_config_id" value="7"/>
+            <column name="mileage" value="15000"/>
+            <column name="time" value="0"/>
+        </insert>
+
+        <insert tableName="car_job">
+            <column name="id" value="8"/>
+            <column name="job_type_id" value="14"/>
+            <column name="car_config_id" value="7"/>
+            <column name="mileage" value="20000"/>
+            <column name="time" value="12"/>
+        </insert>
+
+        <insert tableName="car_job">
+            <column name="id" value="9"/>
+            <column name="job_type_id" value="3"/>
+            <column name="car_config_id" value="7"/>
+            <column name="mileage" value="20000"/>
+            <column name="time" value="12"/>
+        </insert>
+
+        <insert tableName="car_job">
+            <column name="id" value="10"/>
+            <column name="job_type_id" value="2"/>
+            <column name="car_config_id" value="7"/>
+            <column name="mileage" value="40000"/>
+            <column name="time" value="24"/>
         </insert>
 
 

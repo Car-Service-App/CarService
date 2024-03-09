@@ -10,7 +10,8 @@
     <include file="v.0.0.1/create-car-models-0.0.4.xml" relativeToChangelogFile="true"/>
     <include file="v.0.0.1/create-engines-0.0.5.xml" relativeToChangelogFile="true"/>
     <include file="v.0.0.1/create-car-peugeout-0.0.6.xml" relativeToChangelogFile="true"/>
-    <include file="v.0.0.1/create-car-engines-0.0.7.xml" relativeToChangelogFile="true"/>
+    <include file="v.0.0.1/create-car-toyota-corolla-0.0.11.xml" relativeToChangelogFile="true"/>
+    <include file="v.0.0.1/create-car-configs-0.0.7.xml" relativeToChangelogFile="true"/>
     <include file="v.0.0.1/create-job-types-0.0.8.xml" relativeToChangelogFile="true"/>
     <include file="v.0.0.1/create-car-job-0.0.9.xml" relativeToChangelogFile="true"/>
     <include file="v.0.0.1/create-parts-in-job-0.0.10.xml" relativeToChangelogFile="true"/>

@@ -1,6 +1,7 @@
 package ru.vsu.cs.zmaev.carservice.service;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import ru.vsu.cs.zmaev.carservice.domain.dto.EntityPage;
 import ru.vsu.cs.zmaev.carservice.domain.dto.criteria.CarModelCriteriaSearch;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarModelRequestDto;
@@ -16,4 +17,7 @@ public interface CarModelService {
     CarModelResponseDto update(Long id, CarModelRequestDto carModelRequestDto);
 
     void delete(Long id);
+
+    Page<CarModelResponseDto> findAll(Pageable pageable);
+
 }
