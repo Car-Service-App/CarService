@@ -21,6 +21,7 @@ public interface CarMapper extends EntityMapper<Car, CarRequestDto, CarResponseD
         carResponseDto.setManufacturerName(car.getCarModel().getManufacturer().getBrandName());
         carResponseDto.setModelName(car.getCarModel().getModelName());
         carResponseDto.setReleaseYear(car.getReleaseYear());
+        carResponseDto.setType(car.getCarType().name());
         carResponseDto.setCountry(car.getCarModel().getManufacturer().getCountry());
 
         return carResponseDto;
@@ -36,8 +37,11 @@ public interface CarMapper extends EntityMapper<Car, CarRequestDto, CarResponseD
         carResponseDto.setManufacturerName(car.getCarModel().getManufacturer().getBrandName());
         carResponseDto.setModelName(car.getCarModel().getModelName());
         carResponseDto.setReleaseYear(car.getReleaseYear());
+        carResponseDto.setType(car.getCarType().name());
         carResponseDto.setCountry(car.getCarModel().getManufacturer().getCountry());
+        carResponseDto.setCarGeneration(car.getGeneration());
         carResponseDto.setCarImageLink(car.getCarImageLink());
+        carResponseDto.setIsRestyling(car.getIsRestyling());
         carResponseDto.setConfig(car.getCarConfigs().stream().map(carConfigMapper::toDto).toList());
 
         return carResponseDto;

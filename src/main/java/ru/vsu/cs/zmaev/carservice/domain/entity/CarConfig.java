@@ -2,7 +2,6 @@ package ru.vsu.cs.zmaev.carservice.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import ru.vsu.cs.zmaev.carservice.domain.enums.CarType;
 
 @Data
 @Entity
@@ -19,16 +18,6 @@ public class CarConfig {
 
     @Column(name = "engine_id")
     private Long engineId;
-
-    @Column(name = "car_generation")
-    private Integer generation;
-
-    @Column(name = "is_restyling")
-    private Boolean isRestyling;
-
-    @Column(name = "car_type")
-    @Enumerated(EnumType.STRING)
-    private CarType carType;
 
     @Column(name = "transmission_id")
     private Long transmissionId;

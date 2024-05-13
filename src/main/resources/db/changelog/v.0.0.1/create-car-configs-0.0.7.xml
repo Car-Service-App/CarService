@@ -9,63 +9,42 @@
             <column name="id" value="1"/>
             <column name="car_id" value="1"/>
             <column name="engine_id" value="1"/>
-            <column name="car_type" value="HATCHBACK"/>
-            <column name="car_generation" value="1"/>
-            <column name="is_restyling" value="false"/>
             <column name="transmission_id" value="3"/>
         </insert>
         <insert tableName="car_config">
             <column name="id" value="2"/>
             <column name="car_id" value="1"/>
             <column name="engine_id" value="2"/>
-            <column name="car_type" value="HATCHBACK"/>
-            <column name="car_generation" value="1"/>
-            <column name="is_restyling" value="false"/>
             <column name="transmission_id" value="3"/>
         </insert>
         <insert tableName="car_config">
             <column name="id" value="3"/>
             <column name="car_id" value="1"/>
             <column name="engine_id" value="3"/>
-            <column name="car_type" value="HATCHBACK"/>
-            <column name="car_generation" value="1"/>
-            <column name="is_restyling" value="false"/>
             <column name="transmission_id" value="3"/>
         </insert>
         <insert tableName="car_config">
             <column name="id" value="4"/>
             <column name="car_id" value="1"/>
             <column name="engine_id" value="4"/>
-            <column name="car_type" value="HATCHBACK"/>
-            <column name="car_generation" value="1"/>
-            <column name="is_restyling" value="false"/>
             <column name="transmission_id" value="3"/>
         </insert>
         <insert tableName="car_config">
             <column name="id" value="5"/>
             <column name="car_id" value="1"/>
             <column name="engine_id" value="5"/>
-            <column name="car_type" value="HATCHBACK"/>
-            <column name="car_generation" value="1"/>
-            <column name="is_restyling" value="false"/>
             <column name="transmission_id" value="3"/>
         </insert>
         <insert tableName="car_config">
             <column name="id" value="6"/>
             <column name="car_id" value="1"/>
             <column name="engine_id" value="6"/>
-            <column name="car_type" value="HATCHBACK"/>
-            <column name="car_generation" value="1"/>
-            <column name="is_restyling" value="false"/>
             <column name="transmission_id" value="3"/>
         </insert>
         <insert tableName="car_config">
             <column name="id" value="7"/>
             <column name="car_id" value="13"/>
             <column name="engine_id" value="13"/>
-            <column name="car_type" value="HATCHBACK"/>
-            <column name="car_generation" value="1"/>
-            <column name="is_restyling" value="false"/>
             <column name="transmission_id" value="3"/>
         </insert>
     </changeSet>

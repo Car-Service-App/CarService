@@ -8,8 +8,133 @@
         <insert tableName="car">
             <column name="id" value="1"/>
             <column name="car_model_id" value="218"/>
+            <column name="car_type" value="HATCHBACK"/>
             <column name="release_year" value="2007"/>
+            <column name="car_generation" value="1"/>
+            <column name="is_restyling" value="false"/>
             <column name="car_image_link" value="car/peugeout/308/2007/peugeout-308-1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-2">
+        <insert tableName="car">
+            <column name="id" value="2"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="CABRIOLET"/>
+            <column name="release_year" value="2007"/>
+            <column name="car_generation" value="1"/>
+            <column name="is_restyling" value="false"/>
+            <column name="car_image_link" value="car/peugeout/308/2007/peugeout-308-2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-3">
+        <insert tableName="car">
+            <column name="id" value="3"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="UNIVERSAL"/>
+            <column name="release_year" value="2007"/>
+            <column name="car_generation" value="1"/>
+            <column name="is_restyling" value="false"/>
+            <column name="car_image_link" value="car/peugeout/308/2007/peugeout-308-3"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="ZmaevDA" id="1133241123812-4">
+        <insert tableName="car">
+            <column name="id" value="4"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="HATCHBACK"/>
+            <column name="release_year" value="2011"/>
+            <column name="car_generation" value="1"/>
+            <column name="is_restyling" value="true"/>
+            <column name="car_image_link" value="car/peugeout/308/2011/peugeout-308-1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-5">
+        <insert tableName="car">
+            <column name="id" value="5"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="CABRIOLET"/>
+            <column name="release_year" value="2011"/>
+            <column name="car_generation" value="1"/>
+            <column name="is_restyling" value="true"/>
+            <column name="car_image_link" value="car/peugeout/308/2011/peugeout-308-2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-6">
+        <insert tableName="car">
+            <column name="id" value="6"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="UNIVERSAL"/>
+            <column name="release_year" value="2007"/>
+            <column name="car_generation" value="1"/>
+            <column name="is_restyling" value="true"/>
+            <column name="car_image_link" value="car/peugeout/308/2011/peugeout-308-3"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-7">
+        <insert tableName="car">
+            <column name="id" value="7"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="HATCHBACK"/>
+            <column name="release_year" value="2013"/>
+            <column name="car_generation" value="2"/>
+            <column name="is_restyling" value="false"/>
+            <column name="car_image_link" value="car/peugeout/308/2013/peugeout-308-2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-8">
+        <insert tableName="car">
+            <column name="id" value="8"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="UNIVERSAL"/>
+            <column name="release_year" value="2013"/>
+            <column name="car_generation" value="2"/>
+            <column name="is_restyling" value="false"/>
+            <column name="car_image_link" value="car/peugeout/308/2013/peugeout-308-3"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-9">
+        <insert tableName="car">
+            <column name="id" value="9"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="HATCHBACK"/>
+            <column name="release_year" value="2017"/>
+            <column name="car_generation" value="2 "/>
+            <column name="is_restyling" value="true"/>
+            <column name="car_image_link" value="car/peugeout/308/2017/peugeout-308-2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-10">
+        <insert tableName="car">
+            <column name="id" value="10"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="UNIVERSAL"/>
+            <column name="release_year" value="2017"/>
+            <column name="car_generation" value="2"/>
+            <column name="is_restyling" value="true"/>
+            <column name="car_image_link" value="car/peugeout/308/2017/peugeout-308-3"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-11">
+        <insert tableName="car">
+            <column name="id" value="11"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="HATCHBACK"/>
+            <column name="release_year" value="2021"/>
+            <column name="car_generation" value="3"/>
+            <column name="is_restyling" value="false"/>
+            <column name="car_image_link" value="car/peugeout/308/2021/peugeout-308-2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ZmaevDA" id="1133241123812-12">
+        <insert tableName="car">
+            <column name="id" value="12"/>
+            <column name="car_model_id" value="218"/>
+            <column name="car_type" value="UNIVERSAL"/>
+            <column name="release_year" value="2021"/>
+            <column name="car_generation" value="3"/>
+            <column name="is_restyling" value="false"/>
+            <column name="car_image_link" value="car/peugeout/308/2021/peugeout-308-3"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

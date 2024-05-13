@@ -8,7 +8,10 @@
         <insert tableName="car">
             <column name="id" value="13"/>
             <column name="car_model_id" value="249"/>
+            <column name="car_type" value="HATCHBACK"/>
             <column name="release_year" value="2016"/>
+            <column name="car_generation" value="11"/>
+            <column name="is_restyling" value="true"/>
             <column name="car_image_link" value="car/toyota/corolla/2016/toyota-corolla-11"/>
         </insert>
     </changeSet>

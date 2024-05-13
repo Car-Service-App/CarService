@@ -55,15 +55,6 @@
             <column name="engine_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
-            <column name="car_type" type="VARCHAR(255)">
-                <constraints nullable="false" unique="false"/>
-            </column>
-            <column name="car_generation" type="INTEGER">
-                <constraints nullable="false" unique="false"/>
-            </column>
-            <column name="is_restyling" type="BOOLEAN">
-                <constraints nullable="false" unique="false"/>
-            </column>
             <column name="transmission_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
@@ -88,6 +79,15 @@
                 <constraints nullable="false" primaryKey="true" primaryKeyName="car_pkey"/>
             </column>
             <column name="car_model_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="car_type" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="car_generation" type="INTEGER">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="is_restyling" type="BOOLEAN">
                 <constraints nullable="false" unique="false"/>
             </column>
             <column name="release_year" type="INTEGER"/>
