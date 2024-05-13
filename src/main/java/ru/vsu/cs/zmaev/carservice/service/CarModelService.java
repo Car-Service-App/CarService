@@ -7,8 +7,12 @@ import ru.vsu.cs.zmaev.carservice.domain.dto.criteria.CarModelCriteriaSearch;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarModelRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarModelResponseDto;
 
+import java.util.List;
+
 public interface CarModelService {
     Page<CarModelResponseDto> findAllWithFilters(EntityPage entityPage, CarModelCriteriaSearch carModelCriteriaSearch);
+
+    List<CarModelResponseDto> findAllModelsByManufacturerId(Long manufacturerId);
 
     CarModelResponseDto findOneById(Long id);
 

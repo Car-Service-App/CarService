@@ -11,4 +11,8 @@ public class NoSuchEntityException extends EntityException {
     public NoSuchEntityException(Class<?> c, String name) {
         super(HttpStatus.NOT_FOUND, String.format(MESSAGE, c.getName(), name));
     }
+
+    public NoSuchEntityException(String message) {
+        super(HttpStatus.NOT_FOUND, String.format(message));
+    }
 }

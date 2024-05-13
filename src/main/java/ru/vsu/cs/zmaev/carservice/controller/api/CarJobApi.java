@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import ru.vsu.cs.zmaev.carservice.domain.dto.ErrorMessage;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarJobRequestDto;
-import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarJobResponseDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.response.ExistingCarJobResponseDto;
 
 @Tag(name = "Car Job Api", description = "API для работы с работами по автомобилям")
 
@@ -26,13 +26,13 @@ public interface CarJobApi {
                     content = {
                             @Content(
                                     mediaType = "application/json",
-                                    schema = @Schema(implementation = CarJobResponseDto.class)
+                                    schema = @Schema(implementation = ExistingCarJobResponseDto.class)
                             )
                     }
             )
     })
     @Operation(summary = "Получение всех работ по автомобилям")
-    ResponseEntity<Page<CarJobResponseDto>> findAll(
+    ResponseEntity<Page<ExistingCarJobResponseDto>> findAll(
             @Parameter(description = "Номер страницы") Integer pagePosition,
             @Parameter(description = "Размер страницы") Integer pageSize
     );
@@ -44,7 +44,7 @@ public interface CarJobApi {
                     content = {
                             @Content(
                                     mediaType = "application/json",
-                                    schema = @Schema(implementation = CarJobResponseDto.class)
+                                    schema = @Schema(implementation = ExistingCarJobResponseDto.class)
                             )
                     }
             ),
@@ -60,7 +60,7 @@ public interface CarJobApi {
             )
     })
     @Operation(summary = "Получение всех работ по автомобилям")
-    ResponseEntity<Page<CarJobResponseDto>> findAllByCarConfig(
+    ResponseEntity<Page<ExistingCarJobResponseDto>> findAllByCarConfig(
             @Parameter(description = "Номер страницы") Integer pagePosition,
             @Parameter(description = "Размер страницы") Integer pageSize,
             @RequestBody Long carConfigId
@@ -73,7 +73,7 @@ public interface CarJobApi {
                     content = {
                             @Content(
                                     mediaType = "application/json",
-                                    schema = @Schema(implementation = CarJobResponseDto.class)
+                                    schema = @Schema(implementation = ExistingCarJobResponseDto.class)
                             )
                     }
             ),
@@ -83,7 +83,7 @@ public interface CarJobApi {
             )
     })
     @Operation(summary = "Получение работы по id")
-    ResponseEntity<CarJobResponseDto> findOneById(@Parameter(description = "id работы") Long id);
+    ResponseEntity<ExistingCarJobResponseDto> findOneById(@Parameter(description = "id работы") Long id);
 
     @ApiResponses(value = {
             @ApiResponse(
@@ -92,13 +92,13 @@ public interface CarJobApi {
                     content = {
                             @Content(
                                     mediaType = "application/json",
-                                    schema = @Schema(implementation = CarJobResponseDto.class)
+                                    schema = @Schema(implementation = ExistingCarJobResponseDto.class)
                             )
                     }
             )
     })
     @Operation(summary = "Получение работ по id задачи")
-    ResponseEntity<Page<CarJobResponseDto>> findCarJobsByJobId(
+    ResponseEntity<Page<ExistingCarJobResponseDto>> findCarJobsByJobId(
             @Parameter(description = "id задачи") Long jobId,
             @Parameter(description = "Номер страницы") Integer pagePosition,
             @Parameter(description = "Размер страницы") Integer pageSize
@@ -111,7 +111,7 @@ public interface CarJobApi {
                     content = {
                             @Content(
                                     mediaType = "application/json",
-                                    schema = @Schema(implementation = CarJobResponseDto.class)
+                                    schema = @Schema(implementation = ExistingCarJobResponseDto.class)
                             )
                     }
             ),
@@ -121,6 +121,6 @@ public interface CarJobApi {
             )
     })
     @Operation(summary = "Создание работы по автомобилю")
-    ResponseEntity<CarJobResponseDto> create(@Valid CarJobRequestDto dto);
+    ResponseEntity<ExistingCarJobResponseDto> create(@Valid CarJobRequestDto dto);
 }
 

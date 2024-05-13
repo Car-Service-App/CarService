@@ -8,8 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.vsu.cs.zmaev.carservice.controller.api.CarJobApi;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarJobRequestDto;
-import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarJobResponseDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.response.AllCarJobResponseDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.response.ExistingCarJobResponseDto;
 import ru.vsu.cs.zmaev.carservice.service.CarJobService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/car-job")
@@ -22,43 +25,49 @@ public class CarJobController implements CarJobApi {
     }
 
     @GetMapping(produces = "application/json")
-    public ResponseEntity<Page<CarJobResponseDto>> findAll(
+    public ResponseEntity<Page<ExistingCarJobResponseDto>> findAll(
             @RequestParam(defaultValue = "0") Integer page,
             @RequestParam(defaultValue = "10") Integer size
     ) {
-        Page<CarJobResponseDto> carJobs = carJobService.findAll(PageRequest.of(page, size));
+        Page<ExistingCarJobResponseDto> carJobs = carJobService.findAll(PageRequest.of(page, size));
         return ResponseEntity.ok().body(carJobs);
     }
 
     @GetMapping(value = "/car-config/{carConfigId}",produces = "application/json")
-    public ResponseEntity<Page<CarJobResponseDto>> findAllByCarConfig(
+    public ResponseEntity<Page<ExistingCarJobResponseDto>> findAllByCarConfig(
             @RequestParam(defaultValue = "0") Integer page,
             @RequestParam(defaultValue = "10") Integer size,
             @PathVariable Long carConfigId
     ) {
-        Page<CarJobResponseDto> carJobs = carJobService
-                .findAllByCarConfig(PageRequest.of(page, size), carConfigId);
+        Page<ExistingCarJobResponseDto> carJobs = carJobService
+                .findExistingByCarConfig(PageRequest.of(page, size), carConfigId);
+        return ResponseEntity.ok().body(carJobs);
+    }
+
+    @GetMapping(value = "/car-config/{id}/all",produces = "application/json")
+    public ResponseEntity<List<AllCarJobResponseDto>> findAllByCarConfig(@PathVariable Long id) {
+        List<AllCarJobResponseDto> carJobs = carJobService.findAllByCarConfig(id);
         return ResponseEntity.ok().body(carJobs);
     }
 
     @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<CarJobResponseDto> findOneById(@PathVariable Long id) {
-        CarJobResponseDto carJob = carJobService.findOneById(id);
+    public ResponseEntity<ExistingCarJobResponseDto> findOneById(@PathVariable Long id) {
+        ExistingCarJobResponseDto carJob = carJobService.findOneById(id);
         return ResponseEntity.ok().body(carJob);
     }
 
     @GetMapping(value = "/job/{jobId}", produces = "application/json")
-    public ResponseEntity<Page<CarJobResponseDto>> findCarJobsByJobId(
+    public ResponseEntity<Page<ExistingCarJobResponseDto>> findCarJobsByJobId(
             @PathVariable Long jobId,
             @RequestParam(defaultValue = "0") Integer page,
             @RequestParam(defaultValue = "10") Integer size) {
-        Page<CarJobResponseDto> carJobs = carJobService.findAllByJobId(PageRequest.of(page, size), jobId);
+        Page<ExistingCarJobResponseDto> carJobs = carJobService.findAllByJobId(PageRequest.of(page, size), jobId);
         return ResponseEntity.ok().body(carJobs);
     }
 
     @PostMapping(produces = "application/json")
-    public ResponseEntity<CarJobResponseDto> create(@Valid @RequestBody CarJobRequestDto dto) {
-        CarJobResponseDto createdCarJob = carJobService.save(dto);
+    public ResponseEntity<ExistingCarJobResponseDto> create(@Valid @RequestBody CarJobRequestDto dto) {
+        ExistingCarJobResponseDto createdCarJob = carJobService.save(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdCarJob);
     }
 }

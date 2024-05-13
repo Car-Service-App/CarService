@@ -17,4 +17,7 @@ public class PartsInJob {
     private CarJob carJob;
 
     private Long carPartId;
+
+    @Column(name = "amount")
+    private Integer amount;
 }

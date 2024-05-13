@@ -15,6 +15,8 @@ import ru.vsu.cs.zmaev.carservice.repository.ManufacturerRepository;
 import ru.vsu.cs.zmaev.carservice.repository.criteria.ManufacturerCriteriaRepository;
 import ru.vsu.cs.zmaev.carservice.service.ManufacturerService;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ManufacturerServiceImpl implements ManufacturerService {
@@ -30,6 +32,11 @@ public class ManufacturerServiceImpl implements ManufacturerService {
         return manufacturerCriteriaRepository
                 .findAllWithFilters(entityPage, criteriaSearch)
                 .map(manufacturerMapper::toDto);
+    }
+
+    @Override
+    public List<ManufacturerResponseDto> findAllNoPagination() {
+        return manufacturerRepository.findAll().stream().map(manufacturerMapper::toDto).toList();
     }
 
     @Override

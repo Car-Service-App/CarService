@@ -10,5 +10,5 @@ public class CarModelResponseDto {
     @Schema(description = "Модель автомобиля", example = "Civic")
     private final String modelName;
     @Schema(description = "Производитель")
-    private final ManufacturerResponseDto manufacturer;
+    private final String manufacturerName;
 }

@@ -1,4 +1,4 @@
-package ru.vsu.cs.zmaev.carservice.controller.config.swagger;
+package ru.vsu.cs.zmaev.carservice.config.swagger;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

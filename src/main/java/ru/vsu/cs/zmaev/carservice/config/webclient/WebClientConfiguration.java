@@ -1,4 +1,4 @@
-package ru.vsu.cs.zmaev.carservice.controller.config.webclient;
+package ru.vsu.cs.zmaev.carservice.config.webclient;
 
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;

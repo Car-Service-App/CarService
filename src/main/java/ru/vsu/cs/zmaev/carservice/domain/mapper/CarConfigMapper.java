@@ -7,6 +7,7 @@ import ru.vsu.cs.zmaev.carservice.domain.entity.CarConfig;
 
 @Mapper(componentModel = "spring", uses = { CarModelMapper.class, EngineMapper.class})
 public interface CarConfigMapper extends EntityMapper<CarConfig, CarConfigRequestDto, CarConfigResponseDto> {
+
     @Override
-    CarConfigResponseDto toDto(CarConfig entity);
+    CarConfigResponseDto toDto(CarConfig carConfig);
 }

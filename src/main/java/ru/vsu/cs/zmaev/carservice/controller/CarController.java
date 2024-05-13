@@ -14,12 +14,13 @@ import ru.vsu.cs.zmaev.carservice.domain.dto.criteria.CarCriteriaSearch;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarFilterRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarResponseDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarWithConfigResponseDto;
 import ru.vsu.cs.zmaev.carservice.service.CarService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/cars")
+@RequestMapping("/api/car")
 public class CarController implements CarApi {
 
     private final CarService carService;
@@ -63,6 +64,11 @@ public class CarController implements CarApi {
     @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<CarResponseDto> findOneById(@PathVariable Long id) {
         return ResponseEntity.ok().body(carService.findOneById(id));
+    }
+
+    @GetMapping(value = "/{id}/config", produces = "application/json")
+    public ResponseEntity<CarWithConfigResponseDto> findCarWithConfigsById(@PathVariable Long id) {
+        return ResponseEntity.ok().body(carService.findCarWithConfigsById(id));
     }
 
     @GetMapping(value = "/model/{modelId}", produces = "application/json")

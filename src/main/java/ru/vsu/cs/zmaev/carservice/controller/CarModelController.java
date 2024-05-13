@@ -18,8 +18,10 @@ import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarModelRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarModelResponseDto;
 import ru.vsu.cs.zmaev.carservice.service.CarModelService;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("api/car-model")
+@RequestMapping("api/car-models")
 @RequiredArgsConstructor
 public class CarModelController implements CarModelApi {
 
@@ -51,6 +53,11 @@ public class CarModelController implements CarModelApi {
     @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<CarModelResponseDto> findOneById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(carModelService.findOneById(id));
+    }
+
+    @GetMapping(value = "manufacturer/{id}", produces = "application/json")
+    public ResponseEntity<List<CarModelResponseDto>> findAllByManufacturerId(@PathVariable Long id) {
+        return ResponseEntity.status(HttpStatus.OK).body(carModelService.findAllModelsByManufacturerId(id));
     }
 
     @PostMapping(produces = "application/json")

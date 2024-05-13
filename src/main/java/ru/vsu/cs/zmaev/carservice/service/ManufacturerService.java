@@ -6,8 +6,12 @@ import ru.vsu.cs.zmaev.carservice.domain.dto.criteria.ManufacturerCriteriaSearch
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.ManufacturerRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.ManufacturerResponseDto;
 
+import java.util.List;
+
 public interface ManufacturerService {
     Page<ManufacturerResponseDto> findAllWithFilters(EntityPage entityPage, ManufacturerCriteriaSearch manufacturerCriteriaSearch);
+
+    List<ManufacturerResponseDto> findAllNoPagination();
 
     ManufacturerResponseDto findOneById(Long id);
 

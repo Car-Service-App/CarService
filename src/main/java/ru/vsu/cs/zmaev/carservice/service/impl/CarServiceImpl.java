@@ -9,14 +9,20 @@ import ru.vsu.cs.zmaev.carservice.domain.dto.EntityPage;
 import ru.vsu.cs.zmaev.carservice.domain.dto.criteria.CarCriteriaSearch;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarConfigRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarRequestDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarConfigResponseDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarResponseDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarWithConfigResponseDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.response.EngineResponseDto;
 import ru.vsu.cs.zmaev.carservice.domain.entity.*;
+import ru.vsu.cs.zmaev.carservice.domain.mapper.CarConfigMapper;
 import ru.vsu.cs.zmaev.carservice.domain.mapper.CarMapper;
+import ru.vsu.cs.zmaev.carservice.domain.mapper.EngineMapperImpl;
 import ru.vsu.cs.zmaev.carservice.exception.NoSuchEntityException;
 import ru.vsu.cs.zmaev.carservice.repository.*;
 import ru.vsu.cs.zmaev.carservice.repository.criteria.CriteriaRepository;
 import ru.vsu.cs.zmaev.carservice.service.CarService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,6 +36,8 @@ public class CarServiceImpl implements CarService {
     private final TransmissionRepository transmissionRepository;
     private final CriteriaRepository<Car, CarCriteriaSearch> carCriteriaRepository;
     private final CarMapper carMapper;
+    private final CarConfigMapper carConfigMapper;
+    private final EngineMapperImpl engineMapperImpl;
 
     @Override
     @Transactional(readOnly = true)
@@ -54,6 +62,31 @@ public class CarServiceImpl implements CarService {
         Car car = carRepository.findById(id).orElseThrow(() ->
                 new NoSuchEntityException(Car.class, id));
         return carMapper.toDto(car);
+    }
+
+    @Override
+    public CarWithConfigResponseDto findCarWithConfigsById(Long id) {
+        Car car = carRepository.findById(id).orElseThrow(() ->
+                new NoSuchEntityException(Car.class, id));
+        CarWithConfigResponseDto carWithConfigResponseDto = carMapper.toCarWithConfigDto(car, carConfigMapper);
+        List<CarConfigResponseDto> carConfigResponseDtos = new ArrayList<>();
+        for (CarConfig carConfig: car.getCarConfigs()) {
+            EngineResponseDto engine = engineMapperImpl.toDto(
+                    engineRepository.findById(carConfig.getEngineId())
+                    .orElseThrow(
+                            () -> new NoSuchEntityException(Engine.class, carConfig.getEngineId())));
+            String transmissionName = transmissionRepository.findById(carConfig.getTransmissionId()).orElseThrow(
+                    () -> new NoSuchEntityException(Transmission.class, carConfig.getTransmissionId())
+            ).getTransmissionType().name();
+            CarConfigResponseDto carConfigResponseDto = new CarConfigResponseDto();
+            carConfigResponseDto.setId(carConfig.getId());
+            carConfigResponseDto.setEngineName(engine.getName());
+            carConfigResponseDto.setEngineCapacity(engine.getCapacity());
+            carConfigResponseDto.setTransmissionName(transmissionName);
+            carConfigResponseDtos.add(carConfigResponseDto);
+        }
+        carWithConfigResponseDto.setConfig(carConfigResponseDtos);
+        return carWithConfigResponseDto;
     }
 
     @Override

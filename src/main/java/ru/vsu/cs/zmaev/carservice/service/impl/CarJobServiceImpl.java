@@ -1,31 +1,28 @@
 package ru.vsu.cs.zmaev.carservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarJobRequestDto;
-import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarJobResponseDto;
-import ru.vsu.cs.zmaev.carservice.domain.dto.response.CarResponseDto;
-import ru.vsu.cs.zmaev.carservice.domain.dto.response.JobTypeResponseDto;
-import ru.vsu.cs.zmaev.carservice.domain.entity.Car;
-import ru.vsu.cs.zmaev.carservice.domain.entity.CarConfig;
-import ru.vsu.cs.zmaev.carservice.domain.entity.CarJob;
-import ru.vsu.cs.zmaev.carservice.domain.entity.JobType;
-import ru.vsu.cs.zmaev.carservice.domain.mapper.CarConfigMapper;
-import ru.vsu.cs.zmaev.carservice.domain.mapper.CarJobMapper;
-import ru.vsu.cs.zmaev.carservice.domain.mapper.CarMapper;
-import ru.vsu.cs.zmaev.carservice.domain.mapper.JobTypeMapper;
+import ru.vsu.cs.zmaev.carservice.domain.dto.request.CarPartsCreateCarJobRequestDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.request.CreateCarPartInCarPartServiceRequestDto;
+import ru.vsu.cs.zmaev.carservice.domain.dto.response.*;
+import ru.vsu.cs.zmaev.carservice.domain.entity.*;
+import ru.vsu.cs.zmaev.carservice.domain.mapper.*;
 import ru.vsu.cs.zmaev.carservice.exception.NoSuchEntityException;
-import ru.vsu.cs.zmaev.carservice.repository.CarConfigRepository;
-import ru.vsu.cs.zmaev.carservice.repository.CarJobRepository;
-import ru.vsu.cs.zmaev.carservice.repository.CarRepository;
-import ru.vsu.cs.zmaev.carservice.repository.JobTypeRepository;
+import ru.vsu.cs.zmaev.carservice.repository.*;
 import ru.vsu.cs.zmaev.carservice.service.CarJobService;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -39,39 +36,77 @@ public class CarJobServiceImpl implements CarJobService {
     private final CarMapper carMapper;
     private final CarConfigRepository carConfigRepository;
     private final CarConfigMapper carConfigMapper;
+    private final PartsInJobRepository partsInJobRepository;
+
+    private final WebClient webClient;
+    private final EngineRepository engineRepository;
+    private final EngineMapperImpl engineMapperImpl;
+    private final TransmissionRepository transmissionRepository;
+
+    @Value("${car-parts.service.base-url}")
+    private String carPartsServiceBaseUrl;
 
     @Override
     @Transactional(readOnly = true)
-    public Page<CarJobResponseDto> findAll(Pageable pageable) {
+    public Page<ExistingCarJobResponseDto> findAll(Pageable pageable) {
         Page<CarJob> carJobsPage = carJobRepository.findAll(pageable);
-        List<CarJobResponseDto> carJobResponseDtoList = carJobsPage.getContent().stream()
+        List<ExistingCarJobResponseDto> existingCarJobResponseDtoList = carJobsPage.getContent().stream()
                 .map(this::mapToDto).toList();
-        return new PageImpl<>(carJobResponseDtoList, pageable, carJobsPage.getTotalElements());
+        return new PageImpl<>(existingCarJobResponseDtoList, pageable, carJobsPage.getTotalElements());
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Page<CarJobResponseDto> findAllByCarConfig(Pageable pageable, Long carConfigId) {
+    public Page<ExistingCarJobResponseDto> findExistingByCarConfig(Pageable pageable, Long carConfigId) {
         CarConfig carConfig = carConfigRepository.findById(carConfigId).orElseThrow(() ->
                 new NoSuchEntityException(CarConfig.class, carConfigId));
         Page<CarJob> carJobsPage = carJobRepository.findAllByCarConfig(pageable, carConfig);
-        List<CarJobResponseDto> carJobResponseDtoList = carJobsPage.getContent().stream()
+        List<ExistingCarJobResponseDto> existingCarJobResponseDtoList = carJobsPage.getContent().stream()
                 .map(this::mapToDto).toList();
-        return new PageImpl<>(carJobResponseDtoList, pageable, carJobsPage.getTotalElements());
+        return new PageImpl<>(existingCarJobResponseDtoList, pageable, carJobsPage.getTotalElements());
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Page<CarJobResponseDto> findAllByJobId(Pageable pageable, Long jobId) {
+    public List<AllCarJobResponseDto> findAllByCarConfig(Long carConfigId) {
+        CarConfig carConfig = carConfigRepository.findById(carConfigId).orElseThrow(() ->
+                new NoSuchEntityException(CarConfig.class, carConfigId));
+        List<CarJob> carJobsByConfig = carJobRepository.findAllByCarConfig(carConfig);
+        List<JobType> jobTypes = jobTypeRepository.findAll();
+        Map<String, AllCarJobResponseDto> carJobMap = new HashMap<>();
+        for (CarJob carJob : carJobsByConfig) {
+            AllCarJobResponseDto carJobDto = carJobMapper.toResponse(carJob);
+            carJobMap.put(carJobDto.getJobTypeName(), carJobDto);
+        }
+        List<AllCarJobResponseDto> allCarJobResponseDtos = new ArrayList<>();
+        for (JobType jobType : jobTypes) {
+            AllCarJobResponseDto carJobDto = carJobMap.get(jobType.getJobName());
+            if (carJobDto != null) {
+                carJobDto.setIsExist(true);
+            } else {
+                carJobDto = new AllCarJobResponseDto();
+                carJobDto.setJobTypeName(jobType.getJobName());
+                carJobDto.setJobTypeId(jobType.getId());
+                carJobDto.setIsExist(false);
+                carJobDto.setCarConfigId(carConfigId);
+            }
+            allCarJobResponseDtos.add(carJobDto);
+        }
+        return allCarJobResponseDtos;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<ExistingCarJobResponseDto> findAllByJobId(Pageable pageable, Long jobId) {
         Page<CarJob> carJobsPage = carJobRepository.findAllByJobType_Id(pageable, jobId);
-        List<CarJobResponseDto> carJobResponseDtoList = carJobsPage.getContent().stream()
+        List<ExistingCarJobResponseDto> existingCarJobResponseDtoList = carJobsPage.getContent().stream()
                 .map(this::mapToDto).toList();
-        return new PageImpl<>(carJobResponseDtoList, pageable, carJobsPage.getTotalElements());
+        return new PageImpl<>(existingCarJobResponseDtoList, pageable, carJobsPage.getTotalElements());
     }
 
     @Override
     @Transactional(readOnly = true)
-    public CarJobResponseDto findOneById(Long id) {
+    public ExistingCarJobResponseDto findOneById(Long id) {
         CarJob carJob = carJobRepository.findById(id).orElseThrow(() ->
                 new NoSuchEntityException(CarJob.class, id));
         return mapToDto(carJob);
@@ -79,21 +114,52 @@ public class CarJobServiceImpl implements CarJobService {
 
     @Override
     @Transactional
-    public CarJobResponseDto save(CarJobRequestDto dto) {
-        CarJob carJob = carJobMapper.toEntity(dto);
+    public ExistingCarJobResponseDto save(CarJobRequestDto dto) {
         CarConfig carConfig = carConfigRepository.findById(dto.getCarConfigId()).orElseThrow(() ->
                 new NoSuchEntityException(CarConfig.class, dto.getCarConfigId()));
         JobType jobType = jobTypeRepository.findById(dto.getJobTypeId()).orElseThrow(() ->
                 new NoSuchEntityException(JobType.class, dto.getJobTypeId()));
+
+        // Попытка найти существующую задачу CarJob
+
+        List<CarJob> existingCarJobs = carJobRepository.findByCarConfigIdAndJobTypeId(dto.getCarConfigId(), dto.getJobTypeId());
+        CarJob carJob;
+        if (existingCarJobs.isEmpty()) {
+            carJob = new CarJob(); // Создаем новый, если не найдено
+        } else {
+            carJob = existingCarJobs.get(0); // Используем первый найденный, если есть
+        }
+
         carJob.setCarConfig(carConfig);
         carJob.setJobType(jobType);
-        carJobRepository.save(carJob);
+        carJob.setMileage(dto.getMileage());
+        carJob.setTime(dto.getTime());
+        // Обновляем или сохраняем CarJob
+        carJob = carJobRepository.save(carJob);
+
+        List<CarPartsCreateCarJobRequestDto> carPartsDtoList = dto.getCarParts();
+        for (CarPartsCreateCarJobRequestDto part : carPartsDtoList) {
+            Long carPartId = saveCarPart(new CreateCarPartInCarPartServiceRequestDto(
+                    dto.getCarConfigId(),
+                    part.getCarPartTypeId(),
+                    part.getOem(),
+                    "/sample-image" // TODO: Доделать штуку с картинками
+            ));
+            // Попытка найти существующую запись PartsInJob
+            Optional<PartsInJob> existingPartsInJob = partsInJobRepository.findByCarPartIdAndCarJob(carPartId, carJob);
+            PartsInJob partsInJob = existingPartsInJob.orElseGet(PartsInJob::new); // Если не найдена, создаем новую
+            partsInJob.setCarPartId(carPartId);
+            partsInJob.setCarJob(carJob);
+            partsInJob.setAmount(part.getAmount());
+            // Обновляем или сохраняем PartsInJob
+            partsInJobRepository.save(partsInJob);
+        }
         return carJobMapper.toDto(carJob);
     }
 
     @Override
     @Transactional
-    public CarJobResponseDto update(Long id, CarJobRequestDto dto) {
+    public ExistingCarJobResponseDto update(Long id, CarJobRequestDto dto) {
         // Impl logic
         return null;
     }
@@ -104,19 +170,54 @@ public class CarJobServiceImpl implements CarJobService {
         // Impl logic
     }
 
-    private CarJobResponseDto mapToDto(CarJob carJob) {
+    private ExistingCarJobResponseDto mapToDto(CarJob carJob) {
         JobTypeResponseDto jobTypeResponseDto = jobTypeMapper.toDto(
                 jobTypeRepository.findById(carJob.getJobType().getId()).orElseThrow(() ->
                         new NoSuchEntityException(JobType.class, carJob.getJobType().getId())));
         CarResponseDto carResponseDto = carMapper.toDto(
                 carRepository.findById(carJob.getCarConfig().getCar().getId()).orElseThrow(() ->
                         new NoSuchEntityException(Car.class, carJob.getCarConfig().getCar().getId())));
-        return new CarJobResponseDto(
-                carJob.getId(),
-                carConfigMapper.toDto(carJob.getCarConfig()),
-                jobTypeResponseDto,
-                carResponseDto,
-                carJob.getMileage(),
-                carJob.getTime());
+        ExistingCarJobResponseDto existingCarJobResponseDto = new ExistingCarJobResponseDto();
+        existingCarJobResponseDto.setId(carJob.getId());
+        existingCarJobResponseDto.setCarId(carResponseDto.getId());
+        existingCarJobResponseDto.setCarConfigId(carJob.getCarConfig().getCar().getId());
+        existingCarJobResponseDto.setJobName(jobTypeResponseDto.getJobName());
+        existingCarJobResponseDto.setManufacturerName(carResponseDto.getManufacturerName());
+        existingCarJobResponseDto.setCarModelName(carResponseDto.getModelName());
+        Long engineId = carJob.getCarConfig().getEngineId();
+        EngineResponseDto engineResponseDto = engineMapperImpl.toDto(engineRepository.findById(engineId).orElseThrow(
+                () -> new NoSuchEntityException(Engine.class, engineId)));
+        Long transmissionId = carJob.getCarConfig().getTransmissionId();
+        String transmissionName = transmissionRepository.findById(transmissionId).orElseThrow(
+                () -> new NoSuchEntityException(Transmission.class, transmissionId)
+        ).getTransmissionType().name();
+        existingCarJobResponseDto.setEngineId(engineId);
+        existingCarJobResponseDto.setEngineName(engineResponseDto.getName());
+        existingCarJobResponseDto.setEngineCapacity(engineResponseDto.getCapacity());
+        existingCarJobResponseDto.setTransmissionId(transmissionId);
+        existingCarJobResponseDto.setTransmissionName(transmissionName);
+        existingCarJobResponseDto.setMileage(carJob.getMileage());
+        existingCarJobResponseDto.setTime(carJob.getTime());
+        return existingCarJobResponseDto;
+    }
+
+    private Long saveCarPart(final CreateCarPartInCarPartServiceRequestDto dto) {
+        return webClient
+                .post()
+                .uri(String.format("%s/api/car-parts/car-service", carPartsServiceBaseUrl))
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(dto)
+                .retrieve()
+                .onStatus(HttpStatusCode::is4xxClientError, clientResponse -> {
+                    if (clientResponse.statusCode().equals(HttpStatus.NOT_FOUND)) {
+                        return Mono.error(new NoSuchEntityException("As"));
+                    } else {
+                        return Mono.error(new RuntimeException("Client error"));
+                    }
+                })
+                .onStatus(HttpStatusCode::is4xxClientError, clientResponse ->
+                        Mono.error(new RuntimeException("Server error")))
+                .bodyToMono(Long.class)
+                .block();
     }
 }

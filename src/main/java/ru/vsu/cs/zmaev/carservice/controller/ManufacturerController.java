@@ -15,6 +15,8 @@ import ru.vsu.cs.zmaev.carservice.domain.dto.request.ManufacturerRequestDto;
 import ru.vsu.cs.zmaev.carservice.domain.dto.response.ManufacturerResponseDto;
 import ru.vsu.cs.zmaev.carservice.service.ManufacturerService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/manufacturers")
 @RequiredArgsConstructor
@@ -39,6 +41,12 @@ public class ManufacturerController implements ManufacturerApi {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(manufacturerService.findAllWithFilters(entityPage, criteriaSearch));
+    }
+
+    @GetMapping(value = "no-pagination", produces = "application/json")
+    public ResponseEntity<List<ManufacturerResponseDto>> findAllManufacturerNoPagination() {
+        List<ManufacturerResponseDto> dtos = manufacturerService.findAllNoPagination();
+        return ResponseEntity.status(HttpStatus.OK).body(dtos);
     }
 
     @GetMapping(value = "/{id}", produces = "application/json")

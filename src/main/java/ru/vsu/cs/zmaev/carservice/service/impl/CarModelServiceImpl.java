@@ -18,6 +18,8 @@ import ru.vsu.cs.zmaev.carservice.repository.ManufacturerRepository;
 import ru.vsu.cs.zmaev.carservice.repository.criteria.CriteriaRepository;
 import ru.vsu.cs.zmaev.carservice.service.CarModelService;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CarModelServiceImpl implements CarModelService {
@@ -42,6 +44,12 @@ public class CarModelServiceImpl implements CarModelService {
         return carModelCriteriaRepository
                 .findAllWithFilters(entityPage, carModelCriteriaSearch)
                 .map(carModelMapper::toDto);
+    }
+
+    @Override
+    public List<CarModelResponseDto> findAllModelsByManufacturerId(Long manufacturerId) {
+        return carModelRepository.findByManufacturerId(manufacturerId)
+                .stream().map(carModelMapper::toDto).toList();
     }
 
     @Override
